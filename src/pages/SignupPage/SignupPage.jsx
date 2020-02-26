@@ -24,6 +24,7 @@ class SignupPage extends Component {
             this.props.history.push('/');
         } catch (err) {
             //TODO
+            console.log('FAIL');
         }
     }
 
