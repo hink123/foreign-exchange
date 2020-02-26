@@ -35,7 +35,7 @@ class SignupPage extends Component {
         return (
             <div>
                 <h1>Signup</h1>
-                <form action="">
+                <form onSubmit={this.handleSubmit}>
                     <div className="field">
                         <label className="label">Name</label>
                         <div className="control">
