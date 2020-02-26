@@ -29,8 +29,8 @@ class App extends Component {
                 <h1>Favorites Page</h1>
               )}/>
 
-              <Route exact path="/signup" render={() => (
-                <SignupPage />
+              <Route exact path="/signup" render={({history}) => (
+                <SignupPage history={history} />
               )}/>
 
               <Route exact path="/login" render={() => (
