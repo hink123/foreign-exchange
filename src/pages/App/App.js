@@ -10,26 +10,29 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar />
-       <h1>Foreign Exchange Market</h1>
+        <div className="container">
+          <h1>Foreign Exchange Market</h1>
 
-       <Switch>
-         <Route exact path="/" render={() => (
-            <h1>Welcome Home</h1>
-          )}/>
+          <Switch>
+            <Route exact path="/" render={() => (
+                <h1>Welcome Home</h1>
+              )}/>
 
-          <Route exact path="/favorites" render={() => (
-            <h1>Favorites Page</h1>
-          )}/>
+              <Route exact path="/favorites" render={() => (
+                <h1>Favorites Page</h1>
+              )}/>
 
-          <Route exact path="/signup" render={() => (
-            <SignupPage />
-          )}/>
+              <Route exact path="/signup" render={() => (
+                <SignupPage />
+              )}/>
 
-          <Route exact path="/login" render={() => (
-            <h1>Login Page</h1>
-          )}/>
+              <Route exact path="/login" render={() => (
+                <h1>Login Page</h1>
+              )}/>
 
-       </Switch>
+          </Switch>
+
+        </div>
       </div>
     );
   }
