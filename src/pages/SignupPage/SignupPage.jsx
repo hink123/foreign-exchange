@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import userService from '../../utils/userService';
 import './SignupPage.css';
 
 class SignupPage extends Component {
@@ -9,6 +10,27 @@ class SignupPage extends Component {
         passwordConf: ''
     };
 
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    }
+
+    handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            await userService.signup(this.state);
+            this.props.handleSignup();
+            this.props.history.push('/');
+        } catch (err) {
+            
+        }
+    }
+
+    isFormInvalid() {
+        return !(this.state.name && this.state.email && this.state.password === this.state.passwordConf)
+    }
+
     render() {
         return (
             <div>
@@ -17,27 +39,28 @@ class SignupPage extends Component {
                     <div className="field">
                         <label className="label">Name</label>
                         <div className="control">
-                            <input type="text" className="input" placeholder='John Smith'/>
+                            <input type="text" className="input" value={this.state.name} name="name" onChange={this.handleChange} placeholder='John Smith'/>
                         </div>
                     </div>
                     <div className="field">
                         <label className="label">Email</label>
                         <div className="control">
-                            <input type="text" className="input" placeholder='john.smith@gmail.com'/>
+                            <input type="text" className="input" value={this.state.email} name="email" onChange={this.handleChange} placeholder='john.smith@gmail.com'/>
                         </div>
                     </div>
                     <div className="field">
                         <label className="label">Password</label>
                         <div className="control">
-                            <input type="text" className="input"/>
+                            <input type="text" className="input" value={this.state.password} name="password" onChange={this.handleChange}/>
                         </div>
                     </div>
                     <div className="field">
                         <label className="label">Confirm Password</label>
                         <div className="control">
-                            <input type="text" className="input" />
+                            <input type="text" className="input" value={this.state.passwordConf} name="passwordConf" onChange={this.handleChange} />
                         </div>
                     </div>
+                    <button type="submit" className="button is-primary" disabled={this.isFormInvalid()}>Submit</button>
                 </form>
             </div>
         )
