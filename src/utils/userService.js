@@ -10,7 +10,7 @@ function signup(user) {
         if(res.ok) return res.json();
         throw new Error('Email already taken!');
     })
-    .then(data => data);
+    .then(({token}) => token);
 }
 
 export default {
