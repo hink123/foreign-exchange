@@ -17,7 +17,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavBar />
+        <NavBar user={this.state.user}/>
         <div className="container">
           <h1>Foreign Exchange Market</h1>
 
