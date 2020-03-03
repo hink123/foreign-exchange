@@ -7,13 +7,14 @@ const NavBar = (props) => {
     <div className='navbar'>
         <Link to='/' className="navbar-item navbar-start">Home</Link>
         <Link to='/favorites' className="navbar-item">Favorites</Link>
-        <Link to='/logout' className="navbar-item">Logout</Link>
+        <Link to='' className="navbar-item" onClick={props.handleLogout}>Logout</Link>
+        <div className="navbar-end">{props.user.name}</div>
     </div>
     :
     <div className="navbar">
         <Link to='/' className="navbar-item navbar-start">Home</Link>
-        <Link to='/login' className="navbar-item">>Login</Link>
-        <Link to='/signup' className="navbar-item">>Signup</Link>
+        <Link to='/login' className="navbar-item">Login</Link>
+        <Link to='/signup' className="navbar-item">Signup</Link>
     </div>
     return (
         <div>

@@ -14,10 +14,15 @@ class App extends Component {
     }
   }
 
+  handleLogout = () => {
+    userService.logout();
+    this.setState({user: null});
+  }
+
   render() {
     return (
       <div className="App">
-        <NavBar user={this.state.user}/>
+        <NavBar user={this.state.user} handleLogout={this.handleLogout}/>
         <div className="container">
           <h1>Foreign Exchange Market</h1>
 
