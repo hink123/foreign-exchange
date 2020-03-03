@@ -20,7 +20,7 @@ class SignupPage extends Component {
         e.preventDefault();
         try {
             await userService.signup(this.state);
-            //this.props.handleSignup();
+            this.props.handleSignup();
             this.props.history.push('/');
         } catch (err) {
             //TODO

@@ -19,10 +19,17 @@ class App extends Component {
     this.setState({user: null});
   }
 
+  handleSignup = () => {
+    this.setState({user: userService.getUser()});
+  }
+
   render() {
     return (
       <div className="App">
-        <NavBar user={this.state.user} handleLogout={this.handleLogout}/>
+        <NavBar 
+          user={this.state.user} 
+          handleLogout={this.handleLogout}
+        />
         <div className="container">
           <h1>Foreign Exchange Market</h1>
 
@@ -36,7 +43,10 @@ class App extends Component {
               )}/>
 
               <Route exact path="/signup" render={({history}) => (
-                <SignupPage history={history} />
+                <SignupPage 
+                  history={history} 
+                  handleSignup={this.handleSignup}
+                />
               )}/>
 
               <Route exact path="/login" render={() => (
