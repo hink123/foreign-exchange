@@ -17,6 +17,8 @@ class LoginPage extends Component {
         e.preventDefault();
         try{
             await userService.login(this.state);
+            this.props.handleLogin();
+            this.props.history.push('/');
         } catch (err) {
             // TODO
             alert('Invalid Credentials')
