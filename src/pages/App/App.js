@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Route, Switch} from 'react-router-dom';
 import NavBar from '../../components/NavBar/NavBar';
 import SignupPage from '../SignupPage/SignupPage';
+import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
 import './App.css';
 
@@ -50,7 +51,7 @@ class App extends Component {
               )}/>
 
               <Route exact path="/login" render={() => (
-                <h1>Login Page</h1>
+                <LoginPage />
               )}/>
 
           </Switch>
