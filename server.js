@@ -17,6 +17,9 @@ app.use(express.static(path.join(__dirname, 'build')));
 // API Routes here
 app.use('/api/users', require('./routes/api/users'));
 
+//may want to move into a router later
+app.use(require('./config/auth'));
+
 // catch all route
 app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
