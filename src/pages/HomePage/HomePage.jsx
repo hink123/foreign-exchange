@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './HomePage.css';
+import CurrencySelects from '../../components/CurrencySelects/CurrencySelects';
 
 class HomePage extends Component {
 
@@ -8,6 +9,7 @@ class HomePage extends Component {
         return (
             <div>
                 <h1>Home Page</h1>
+                <CurrencySelects />
             </div>
         )
     }
