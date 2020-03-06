@@ -1,10 +1,16 @@
 import React, {Component} from 'react';
 import './CurrencySelects.css';
 
+const CURRENCIES = [
+    ['United Arab Emirates Dirham', 'AED'],
+    ['Afghan Afghani', 'AFN'],
+    ['Albanian Lek', 'ALL']
+]
+
 class CurrencySelects extends Component {
 
     state = {
-        currency1: '',
+        currency1: 'AED',
         currency2: ''
     }
 
@@ -25,9 +31,14 @@ class CurrencySelects extends Component {
                 <h2>Please Select Two Currencies</h2>
                 <form onSubmit={this.handleSubmit}>
                     <div className="field">
-                        <div className="control">
+                        {/* <div className="control">
                             <input type="text" className="input" value={this.state.currency1} name="currency1" onChange={this.handleChange} placeholder='Base Currency'/>
-                        </div>
+                        </div> */}
+                        <select name="currency1" className='input' onChange={this.handleChange}>
+                            {CURRENCIES.map((currency, idx) => 
+                                <option value={currency[1]}>{currency[0]}</option>
+                            )}
+                        </select>
                     </div>
                     <div className="field">
                         <div className="control">
