@@ -3,6 +3,7 @@ import {Route, Switch} from 'react-router-dom';
 import NavBar from '../../components/NavBar/NavBar';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
+import HomePage from '../HomePage/HomePage';
 import userService from '../../utils/userService';
 import './App.css';
 
@@ -36,7 +37,7 @@ class App extends Component {
 
           <Switch>
             <Route exact path="/" render={() => (
-                <h1>Welcome Home</h1>
+                <HomePage />
               )}/>
 
               <Route exact path="/favorites" render={() => (
