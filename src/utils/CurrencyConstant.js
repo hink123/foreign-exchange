@@ -1,4 +1,5 @@
-const Currencies = [
+const CURRENCIES = [
+    ['', 'Select a Currency'],
     ['AED', 'United Arab Emirates Dirham'],
     ['AFN', 'Afghan Afghani'],
     ['ALL', 'Albanian Lek'],
@@ -157,3 +158,5 @@ const Currencies = [
     ['ZMW', 'Zambian Kwacha'],
     ['ZWL', 'Zimbabwean Dollar']
 ]
+
+export default CURRENCIES;

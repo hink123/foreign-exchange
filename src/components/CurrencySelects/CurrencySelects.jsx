@@ -1,12 +1,6 @@
 import React, {Component} from 'react';
+import CURRENCIES from '../../utils/CurrencyConstant';
 import './CurrencySelects.css';
-
-const CURRENCIES = [
-    ['Select A Currency', ''],
-    ['United Arab Emirates Dirham', 'AED'],
-    ['Afghan Afghani', 'AFN'],
-    ['Albanian Lek', 'ALL']
-]
 
 class CurrencySelects extends Component {
 
@@ -35,7 +29,7 @@ class CurrencySelects extends Component {
                         <div className="control">
                             <select name="currency1" className='input' onChange={this.handleChange}>
                                 {CURRENCIES.map((currency, idx) => 
-                                    <option value={currency[1]}>{currency[0]}</option>
+                                    <option value={currency[0]}>{currency[1]}</option>
                                 )}
                             </select>
                         </div>
@@ -44,7 +38,7 @@ class CurrencySelects extends Component {
                         <div className="control">
                             <select name="currency2" className='input' onChange={this.handleChange}>
                                 {CURRENCIES.map((currency, idx) => 
-                                    <option value={currency[1]}>{currency[0]}</option>
+                                    <option value={currency[0]}>{currency[1]}</option>
                                 )}
                             </select>
                         </div>
