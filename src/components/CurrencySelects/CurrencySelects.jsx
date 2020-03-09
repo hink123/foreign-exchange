@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './CurrencySelects.css';
 
 const CURRENCIES = [
+    ['Select A Currency', ''],
     ['United Arab Emirates Dirham', 'AED'],
     ['Afghan Afghani', 'AFN'],
     ['Albanian Lek', 'ALL']
@@ -10,7 +11,7 @@ const CURRENCIES = [
 class CurrencySelects extends Component {
 
     state = {
-        currency1: 'AED',
+        currency1: '',
         currency2: ''
     }
 
@@ -31,18 +32,21 @@ class CurrencySelects extends Component {
                 <h2>Please Select Two Currencies</h2>
                 <form onSubmit={this.handleSubmit}>
                     <div className="field">
-                        {/* <div className="control">
-                            <input type="text" className="input" value={this.state.currency1} name="currency1" onChange={this.handleChange} placeholder='Base Currency'/>
-                        </div> */}
-                        <select name="currency1" className='input' onChange={this.handleChange}>
-                            {CURRENCIES.map((currency, idx) => 
-                                <option value={currency[1]}>{currency[0]}</option>
-                            )}
-                        </select>
+                        <div className="control">
+                            <select name="currency1" className='input' onChange={this.handleChange}>
+                                {CURRENCIES.map((currency, idx) => 
+                                    <option value={currency[1]}>{currency[0]}</option>
+                                )}
+                            </select>
+                        </div>
                     </div>
                     <div className="field">
                         <div className="control">
-                            <input type="text" className="input" value={this.state.currency2} name="currency2" onChange={this.handleChange} placeholder="Second Currency" />
+                            <select name="currency2" className='input' onChange={this.handleChange}>
+                                {CURRENCIES.map((currency, idx) => 
+                                    <option value={currency[1]}>{currency[0]}</option>
+                                )}
+                            </select>
                         </div>
                     </div>
                     <button type="submit">Submit</button>
