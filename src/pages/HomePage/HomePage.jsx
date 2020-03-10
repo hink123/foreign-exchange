@@ -9,9 +9,15 @@ class HomePage extends Component {
         return (
             <div>
                 <h1>Home Page</h1>
-                <CurrencySelects 
-                    handleExchangeRateSearch={this.props.handleExchangeRateSearch}
-                />
+                {this.props.graphData ?
+                    <ExchangeRateGraph 
+                        graphData={this.props.graphData}
+                    />
+                    :
+                    <CurrencySelects 
+                        handleExchangeRateSearch={this.props.handleExchangeRateSearch}
+                    />
+                }
             </div>
         )
     }

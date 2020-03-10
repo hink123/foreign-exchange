@@ -13,7 +13,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      user: userService.getUser()
+      user: userService.getUser(),
+      graphData: ''
     }
   }
 
@@ -28,6 +29,7 @@ class App extends Component {
 
   handleExchangeRateSearch = async (curr1, curr2) => {
     let exchangeRateData = await getExchangeRate(curr1, curr2);
+    this.setState({graphData: exchangeRateData});
     console.log(exchangeRateData);
   }
 
@@ -44,6 +46,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" render={() => (
                 <HomePage 
+                  graphData={this.state.graphData}
                   handleExchangeRateSearch={this.handleExchangeRateSearch}
                 />
               )}/>
