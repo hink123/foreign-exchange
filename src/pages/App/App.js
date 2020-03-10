@@ -5,6 +5,7 @@ import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import HomePage from '../HomePage/HomePage';
 import userService from '../../utils/userService';
+import {getExchangeRate} from '../../services/fx-api';
 import './App.css';
 
 class App extends Component {
@@ -25,6 +26,11 @@ class App extends Component {
     this.setState({user: userService.getUser()});
   }
 
+  handleExchangeRateSearch = async (curr1, curr2) => {
+    let exchangeRateData = await getExchangeRate(curr1, curr2);
+    console.log(exchangeRateData);
+  }
+
   render() {
     return (
       <div className="App">
@@ -37,7 +43,9 @@ class App extends Component {
 
           <Switch>
             <Route exact path="/" render={() => (
-                <HomePage />
+                <HomePage 
+                  handleExchangeRateSearch={this.handleExchangeRateSearch}
+                />
               )}/>
 
               <Route exact path="/favorites" render={() => (

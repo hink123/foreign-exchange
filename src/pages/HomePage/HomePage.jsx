@@ -9,7 +9,9 @@ class HomePage extends Component {
         return (
             <div>
                 <h1>Home Page</h1>
-                <CurrencySelects />
+                <CurrencySelects 
+                    handleExchangeRateSearch={this.props.handleExchangeRateSearch}
+                />
             </div>
         )
     }

@@ -17,6 +17,7 @@ class CurrencySelects extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        this.props.handleExchangeRateSearch(this.state.currency1, this.state.currency2);
         console.log('NICE');
     }
 
