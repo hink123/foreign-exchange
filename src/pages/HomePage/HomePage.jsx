@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './HomePage.css';
 import CurrencySelects from '../../components/CurrencySelects/CurrencySelects';
+import ExchangeRateGraph from '../../components/ExchangeRateGraph/ExchangeRateGraph';
 
 class HomePage extends Component {
 
@@ -12,6 +13,7 @@ class HomePage extends Component {
                 {this.props.graphData ?
                     <ExchangeRateGraph 
                         graphData={this.props.graphData}
+                        handleNewSearch={this.props.handleNewSearch}
                     />
                     :
                     <CurrencySelects 

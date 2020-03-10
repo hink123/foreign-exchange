@@ -33,6 +33,10 @@ class App extends Component {
     console.log(exchangeRateData);
   }
 
+  handleNewSearch = () => {
+    this.setState({graphData: ''});
+  }
+
   render() {
     return (
       <div className="App">
@@ -48,6 +52,7 @@ class App extends Component {
                 <HomePage 
                   graphData={this.state.graphData}
                   handleExchangeRateSearch={this.handleExchangeRateSearch}
+                  handleNewSearch={this.handleNewSearch}
                 />
               )}/>
 

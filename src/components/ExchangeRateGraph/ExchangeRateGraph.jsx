@@ -1,8 +1,13 @@
 import React from 'react'; 
 import './ExchangeRateGraph.css';
 
-export default function ExchangeRateGraph(props) {
+const ExchangeRateGraph = (props) => {
     return (
-        <div>Here is the Graph</div>
+        <div>
+            Here is the Graph
+            <button onClick={props.handleNewSearch}>New Search</button>
+        </div>
     )
 }
+
+export default ExchangeRateGraph;
