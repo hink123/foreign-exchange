@@ -28,6 +28,7 @@ class ExchangeRateGraph extends Component {
             title: {
               text: `From ${this.props.graphData['Meta Data']['2. From Symbol']} to ${this.props.graphData['Meta Data']['3. To Symbol']}`
             },
+            theme: 'dark2',
             axisX :{
                 labelAngle: -30
             },
