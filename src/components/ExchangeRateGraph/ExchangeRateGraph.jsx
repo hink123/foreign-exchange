@@ -5,32 +5,37 @@ import './ExchangeRateGraph.css';
 var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
-const options = {
-    title: {
-      text: `From ${this.props.graphData['Meta Data']['2. From Symbol']} to ${this.props.graphData['Meta Data']['3. To Symbol']}`
-    },
-    data: [{				
-              type: "line",
-              dataPoints: [
-                  { label: "Apple",  y: 10  },
-                  { label: "Orange", y: 15  },
-                  { label: "Banana", y: 25  },
-                  { label: "Mango",  y: 30  },
-                  { label: "Grape",  y: 28  }
-                ]
-        }]
-}
-
+var dataPoints=[]
 class ExchangeRateGraph extends Component {
 
 
     componentDidMount() {
-        var chart = this.chart;
-		chart.render();
+        let timeSeriesFX = this.props.graphData['Time Series FX (5min)'];
+        //var chart = this.chart;
+        for(const property in timeSeriesFX) {
+            dataPoints.push({
+                x: property,
+                y: parseFloat(timeSeriesFX[property]['1. open'])
+            });
+        }
+        console.log('DATA HERE', dataPoints);
+		//chart.render();
 		
     }
 
     render() {
+        const options = {
+            title: {
+              text: `From ${this.props.graphData['Meta Data']['2. From Symbol']} to ${this.props.graphData['Meta Data']['3. To Symbol']}`
+            },
+            axisX :{
+                labelAngle: -30
+            },
+            data: [{				
+                      type: "line",
+                      dataPoints: dataPoints
+                }]
+        }
         return (
             <div>
                 <h1>Here is the graph</h1>
