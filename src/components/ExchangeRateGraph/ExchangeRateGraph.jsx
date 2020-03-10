@@ -9,7 +9,7 @@ const ExchangeRateGraph = (props) => {
 
     const options = {
         title: {
-          text: "Basic Column Chart in React"
+          text: `From ${props.graphData['Meta Data']['2. From Symbol']} to ${props.graphData['Meta Data']['3. To Symbol']}`
         },
         data: [{				
                   type: "line",
