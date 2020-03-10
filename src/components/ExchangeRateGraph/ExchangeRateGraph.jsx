@@ -1,4 +1,5 @@
 import React from 'react'; 
+import CanvasJS from '../../services/canvasjs.react';
 import './ExchangeRateGraph.css';
 
 const ExchangeRateGraph = (props) => {
