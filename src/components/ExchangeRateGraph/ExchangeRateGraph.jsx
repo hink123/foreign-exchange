@@ -1,35 +1,36 @@
 import React from 'react'; 
-import CanvasJS from '../../services/canvasjs.react';
+import CanvasJSReact from '../../services/canvasjs.react';
 import './ExchangeRateGraph.css';
+
+var CanvasJS = CanvasJSReact.CanvasJS;
+var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 const ExchangeRateGraph = (props) => {
 
-    const createGraph = () => {
-
-        var chart = new CanvasJS.Chart("chartContainer", {
-            title:{
-                text: "My First Chart in CanvasJS"              
-            },
-            data: [              
-            {
-                // Change type to "doughnut", "line", "splineArea", etc.
-                type: "column",
-                dataPoints: [
-                    { label: "apple",  y: 10  },
-                    { label: "orange", y: 15  },
-                    { label: "banana", y: 25  },
-                    { label: "mango",  y: 30  },
-                    { label: "grape",  y: 28  }
-                ]
-            }
-            ]
-        });
-        chart.render();
+    const options = {
+        title: {
+          text: "Basic Column Chart in React"
+        },
+        data: [{				
+                  type: "line",
+                  dataPoints: [
+                      { label: "Apple",  y: 10  },
+                      { label: "Orange", y: 15  },
+                      { label: "Banana", y: 25  },
+                      { label: "Mango",  y: 30  },
+                      { label: "Grape",  y: 28  }
+                    ]
+            }]
     }
 
     return (
         <div>
             <h1>Here is the graph</h1>
+            <div>
+                <CanvasJSChart 
+                    options={options}
+                />
+            </div>
             <button onClick={props.handleNewSearch}>New Search</button>
         </div>
     )
