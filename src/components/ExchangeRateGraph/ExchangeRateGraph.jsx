@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import CanvasJSReact from '../../services/canvasjs.react';
 import './ExchangeRateGraph.css';
 
-var CanvasJS = CanvasJSReact.CanvasJS;
+//var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 var dataPoints=[]
@@ -11,15 +11,15 @@ class ExchangeRateGraph extends Component {
 
     componentDidMount() {
         let timeSeriesFX = this.props.graphData['Time Series FX (5min)'];
-        //var chart = this.chart;
+        var chart = this.chart;
         for(const property in timeSeriesFX) {
             dataPoints.push({
-                x: property,
+                // x: property,
                 y: parseFloat(timeSeriesFX[property]['1. open'])
             });
         }
         console.log('DATA HERE', dataPoints);
-		//chart.render();
+		chart.render();
 		
     }
 
@@ -32,9 +32,9 @@ class ExchangeRateGraph extends Component {
                 labelAngle: -30
             },
             data: [{				
-                      type: "line",
-                      dataPoints: dataPoints
-                }]
+                type: "line",
+                dataPoints: dataPoints
+            }]
         }
         return (
             <div>
