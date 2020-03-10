@@ -18,7 +18,6 @@ class CurrencySelects extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.handleExchangeRateSearch(this.state.currency1, this.state.currency2);
-        console.log('NICE');
     }
 
     render() {
@@ -30,7 +29,7 @@ class CurrencySelects extends Component {
                         <div className="control">
                             <select name="currency1" className='input' onChange={this.handleChange}>
                                 {CURRENCIES.map((currency, idx) => 
-                                    <option value={currency[0]}>{currency[1]}</option>
+                                    <option value={currency[0]} key={idx}>{currency[1]}</option>
                                 )}
                             </select>
                         </div>
@@ -39,7 +38,7 @@ class CurrencySelects extends Component {
                         <div className="control">
                             <select name="currency2" className='input' onChange={this.handleChange}>
                                 {CURRENCIES.map((currency, idx) => 
-                                    <option value={currency[0]}>{currency[1]}</option>
+                                    <option value={currency[0]} key={idx}>{currency[1]}</option>
                                 )}
                             </select>
                         </div>
