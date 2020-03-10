@@ -31,6 +31,10 @@ class ExchangeRateGraph extends Component {
             axisX :{
                 labelAngle: -30
             },
+            axisY: {
+                title: `${this.props.graphData['Meta Data']['3. To Symbol']}/${this.props.graphData['Meta Data']['2. From Symbol']}`,
+                includeZero: false
+            },
             data: [{				
                 type: "line",
                 dataPoints: dataPoints
