@@ -14,7 +14,7 @@ class ExchangeRateGraph extends Component {
         var chart = this.chart;
         // dataPoints = [];
         for(const property in timeSeriesFX) {
-            dataPoints.push({
+            dataPoints.unshift({
                 // x: property,
                 y: parseFloat(timeSeriesFX[property]['1. open'])
             });
