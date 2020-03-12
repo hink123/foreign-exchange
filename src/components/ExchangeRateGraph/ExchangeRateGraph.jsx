@@ -6,12 +6,13 @@ import './ExchangeRateGraph.css';
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 var dataPoints=[]
-class ExchangeRateGraph extends Component {
 
+class ExchangeRateGraph extends Component {
 
     componentDidMount() {
         let timeSeriesFX = this.props.graphData['Time Series FX (5min)'];
         var chart = this.chart;
+        // dataPoints = [];
         for(const property in timeSeriesFX) {
             dataPoints.push({
                 // x: property,
@@ -19,7 +20,8 @@ class ExchangeRateGraph extends Component {
             });
         }
         console.log('DATA HERE', dataPoints);
-		chart.render();
+        chart.render();
+        dataPoints = [];
 		
     }
 
