@@ -32,6 +32,7 @@ class ExchangeRateGraph extends Component {
             },
             theme: 'dark2',
             axisX :{
+                title: `${this.props.graphData['Meta Data']['4. Last Refreshed'].slice(0, 10)} ${this.props.graphData['Meta Data']['1. Information']}`,
                 labelAngle: -30
             },
             axisY: {
