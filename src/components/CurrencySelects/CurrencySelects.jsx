@@ -49,10 +49,10 @@ class CurrencySelects extends Component {
                     <div className="field">
                         <div className="control">
                             <select name="timeFormat" className='input' onChange={this.handleChange}>
-                                <option value={currency[0]}>Intraday</option>
-                                <option value={currency[0]}>Daily</option>
-                                <option value={currency[0]}>Weekly</option>
-                                <option value={currency[0]}>Monthly</option>
+                                <option value='FX_INTRADAY'>Intraday</option>
+                                <option value='FX_DAILY'>Daily</option>
+                                <option value='FX_WEEKLY'>Weekly</option>
+                                <option value='FX_MONTHLY'>Monthly</option>
                             </select>
                         </div>
                     </div>
