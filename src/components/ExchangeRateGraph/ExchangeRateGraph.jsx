@@ -10,7 +10,17 @@ var dataPoints=[]
 class ExchangeRateGraph extends Component {
 
     componentDidMount() {
-        let timeSeriesFX = this.props.graphData['Time Series FX (5min)'];
+        let timeSeriesFX = '';
+        if(this.props.timeFormat==='FX_INTRADAY') {
+            timeSeriesFX = this.props.graphData['Time Series FX (5min)'];
+        } else if(this.props.timeFormat==='FX_DAILY') {
+            timeSeriesFX = this.props.graphData['Time Series FX (Daily)'];
+        } else if(this.props.timeFormat==='FX_WEEKLY') {
+            timeSeriesFX = this.props.graphData['Time Series FX (Weekly)'];
+        } else if(this.props.timeFormat==='FX_MONTHLY') {
+            timeSeriesFX = this.props.graphData['Time Series FX (Monthly)'];
+        }
+
         var chart = this.chart;
         // dataPoints = [];
 
