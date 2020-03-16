@@ -14,7 +14,8 @@ class App extends Component {
     super();
     this.state = {
       user: userService.getUser(),
-      graphData: ''
+      graphData: '',
+      timeFormat: ''
     }
   }
 
@@ -27,14 +28,20 @@ class App extends Component {
     this.setState({user: userService.getUser()});
   }
 
-  handleExchangeRateSearch = async (curr1, curr2) => {
-    let exchangeRateData = await getExchangeRate(curr1, curr2);
-    this.setState({graphData: exchangeRateData});
+  handleExchangeRateSearch = async (curr1, curr2, timeFormat) => {
+    let exchangeRateData = await getExchangeRate(curr1, curr2, timeFormat);
+    this.setState({
+      graphData: exchangeRateData,
+      timeFormat: timeFormat
+    });
     console.log(exchangeRateData);
   }
 
   handleNewSearch = () => {
-    this.setState({graphData: ''});
+    this.setState({
+      graphData: '',
+      timeFormat: ''
+    });
   }
 
   render() {
@@ -50,6 +57,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" render={() => (
                 <HomePage 
+                  timeFormat={this.state.timeFormat}
                   graphData={this.state.graphData}
                   handleExchangeRateSearch={this.handleExchangeRateSearch}
                   handleNewSearch={this.handleNewSearch}

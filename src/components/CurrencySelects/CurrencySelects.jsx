@@ -18,7 +18,7 @@ class CurrencySelects extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.handleExchangeRateSearch(this.state.currency1, this.state.currency2);
+        this.props.handleExchangeRateSearch(this.state.currency1, this.state.currency2, this.state.timeFormat);
     }
 
     render() {
@@ -49,6 +49,7 @@ class CurrencySelects extends Component {
                     <div className="field">
                         <div className="control">
                             <select name="timeFormat" className='input' onChange={this.handleChange}>
+                                <option value=''>Select the Time Series</option>
                                 <option value='FX_INTRADAY'>Intraday</option>
                                 <option value='FX_DAILY'>Daily</option>
                                 <option value='FX_WEEKLY'>Weekly</option>
