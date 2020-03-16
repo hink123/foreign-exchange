@@ -6,7 +6,8 @@ class CurrencySelects extends Component {
 
     state = {
         currency1: '',
-        currency2: ''
+        currency2: '',
+        format: ''
     }
 
     handleChange = (e) => {
@@ -34,12 +35,21 @@ class CurrencySelects extends Component {
                             </select>
                         </div>
                     </div>
+                
                     <div className="field">
                         <div className="control">
                             <select name="currency2" className='input' onChange={this.handleChange}>
                                 {CURRENCIES.map((currency, idx) => 
                                     <option value={currency[0]} key={idx}>{currency[1]}</option>
                                 )}
+                            </select>
+                        </div>
+                    </div>
+
+                    <div className="field">
+                        <div className="control">
+                            <select name="format" className='input' onChange={this.handleChange}>
+                                <option value={currency[0]} key={idx}>{currency[1]}</option>
                             </select>
                         </div>
                     </div>
