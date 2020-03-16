@@ -7,7 +7,7 @@ class CurrencySelects extends Component {
     state = {
         currency1: '',
         currency2: '',
-        format: ''
+        timeFormat: ''
     }
 
     handleChange = (e) => {
@@ -48,8 +48,11 @@ class CurrencySelects extends Component {
 
                     <div className="field">
                         <div className="control">
-                            <select name="format" className='input' onChange={this.handleChange}>
-                                <option value={currency[0]} key={idx}>{currency[1]}</option>
+                            <select name="timeFormat" className='input' onChange={this.handleChange}>
+                                <option value={currency[0]}>Intraday</option>
+                                <option value={currency[0]}>Daily</option>
+                                <option value={currency[0]}>Weekly</option>
+                                <option value={currency[0]}>Monthly</option>
                             </select>
                         </div>
                     </div>
