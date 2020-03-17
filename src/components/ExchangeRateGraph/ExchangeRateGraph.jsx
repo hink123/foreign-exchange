@@ -47,7 +47,7 @@ class ExchangeRateGraph extends Component {
             theme: 'dark2',
             axisX :{
                 title: `${this.props.graphData['Meta Data']['1. Information']}`,
-                // labelAngle: -30,
+                labelAngle: -30,
                 // interval: 1,
                 // intervalType: "hour",
                 // includeZero: false
