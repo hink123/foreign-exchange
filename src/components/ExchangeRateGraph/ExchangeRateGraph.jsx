@@ -27,7 +27,7 @@ class ExchangeRateGraph extends Component {
         for(const property in timeSeriesFX) {
             // console.log(property.slice(11));
             dataPoints.unshift({
-                // x: property.slice(11, 16),
+                x: property,
                 // x: new Date(2020, 3, 12, 14, i),
                 y: parseFloat(timeSeriesFX[property]['1. open'])
             });
