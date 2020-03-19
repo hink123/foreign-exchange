@@ -12,7 +12,7 @@ class ExchangeRateGraph extends Component {
     componentDidMount() {
         let timeSeriesFX = '';
         if(this.props.timeFormat==='FX_INTRADAY') {
-            timeSeriesFX = this.props.graphData['Time Series FX (5min)'];
+            timeSeriesFX = this.props.graphData['Time Series FX (60min)'];
         } else if(this.props.timeFormat==='FX_DAILY') {
             timeSeriesFX = this.props.graphData['Time Series FX (Daily)'];
         } else if(this.props.timeFormat==='FX_WEEKLY') {
@@ -22,21 +22,23 @@ class ExchangeRateGraph extends Component {
         }
 
         var chart = this.chart;
-        // let i = 0;
-        let currentDate = new Date();
-        let day = currentDate.getDate();
-        let month = currentDate.getMonth();
-        let year = currentDate.getFullYear();
 
         for(const property in timeSeriesFX) {
-            dataPoints.unshift({
-                // x: new Date(year, month, day + i),
-                x: new Date(property.slice(0, 4), property.slice(5, 7) - 1, property.slice(8, 10)),
-                y: parseFloat(timeSeriesFX[property]['1. open'])
-            });
-            // i-=7;
-
+            if(this.props.timeFormat==='FX_INTRADAY') {
+                dataPoints.push({
+                    x: new Date(property.slice(0, 4), property.slice(5, 7) - 1, property.slice(8, 10), property.slice(11, 13)),
+                    y: parseFloat(timeSeriesFX[property]['1. open'])
+                });
+            } else {
+                dataPoints.push({
+                    x: new Date(property.slice(0, 4), property.slice(5, 7) - 1, property.slice(8, 10)),
+                    y: parseFloat(timeSeriesFX[property]['1. open'])
+                });
+            }
+            
         }
+        dataPoints.splice(50);
+        dataPoints.reverse();
         console.log('DATA HERE', dataPoints);
         chart.render();
         dataPoints = [];
@@ -54,8 +56,6 @@ class ExchangeRateGraph extends Component {
                 labelAngle: -30,
                 // interval: 1,
                 // intervalType: "hour",
-                // includeZero: false
-                // // valueFormatString: "D"
             },
             axisY: {
                 title: `${this.props.graphData['Meta Data']['3. To Symbol']}/${this.props.graphData['Meta Data']['2. From Symbol']}`,
