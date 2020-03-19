@@ -22,15 +22,18 @@ class ExchangeRateGraph extends Component {
         }
 
         var chart = this.chart;
-        // dataPoints = [];
+        let i = 0;
+        let currentDate = new Date();
+        let day = currentDate.getDate();
+        let month = currentDate.getMonth();
+        let year = currentDate.getFullYear();
 
         for(const property in timeSeriesFX) {
-            // console.log(property.slice(11));
             dataPoints.unshift({
-                x: property,
-                // x: new Date(2020, 3, 12, 14, i),
+                x: new Date(year, month, day + i),
                 y: parseFloat(timeSeriesFX[property]['1. open'])
             });
+            i--;
 
         }
         console.log('DATA HERE', dataPoints);
