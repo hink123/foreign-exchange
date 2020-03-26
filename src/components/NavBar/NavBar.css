@@ -5,3 +5,12 @@
 .navbar-text {
     color: white;
 }
+
+.navbar-item {
+    padding: 0;
+}
+
+.navbar-text {
+    padding: .5rem .75rem;
+}
+
