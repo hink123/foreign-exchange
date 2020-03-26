@@ -2,15 +2,19 @@
     background-color: grey;
 }
 
-.navbar-text {
-    color: white;
-}
-
 .navbar-item {
     padding: 0;
 }
 
-.navbar-text {
+.navbar-text, .navbar-name {
+    color: white;
     padding: .5rem .75rem;
 }
 
+.navbar-text:hover {
+    color: white
+}
+
+.navbar-name:hover {
+    background-color: #363636;
+}
