@@ -31,3 +31,8 @@ button.burger:hover {
 button:focus {
     outline: none;
 }
+
+.navbar-menu {
+    background-color: #363636;
+    text-align: right;
+}
