@@ -18,3 +18,16 @@
 .navbar-name:hover {
     background-color: #363636;
 }
+
+button.burger {
+    background-color: #363636;
+    border: none;
+}
+
+button.burger:hover {
+    background-color: grey;
+}
+
+button:focus {
+    outline: none;
+}
