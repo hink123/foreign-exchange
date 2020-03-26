@@ -14,7 +14,7 @@ const NavBar = (props) => {
             </button>
         </div>
         <div id="navbarDrop" className="navbar-menu">
-            <div className="navbar-item">
+            <div className="navbar-item test-nav">
                 <Link to='/favorites' className='navbar-text'>Favorites</Link>
             </div>
             <Link to='' className="navbar-item navbar-text" onClick={props.handleLogout}>Logout</Link>

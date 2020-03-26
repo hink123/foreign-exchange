@@ -1,3 +1,7 @@
+.navbar-item:hover {
+    background-color: grey;
+}
+
 .navbar-text {
     color: white;
 }
