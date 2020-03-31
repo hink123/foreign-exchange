@@ -52,7 +52,6 @@ class App extends Component {
           handleLogout={this.handleLogout}
         />
         <div className="container">
-          <h1>Foreign Exchange Market</h1>
 
           <Switch>
             <Route exact path="/" render={() => (

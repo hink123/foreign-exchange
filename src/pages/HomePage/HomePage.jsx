@@ -9,7 +9,9 @@ class HomePage extends Component {
     render() {
         return (
             <div>
-                <h1>Home Page</h1>
+                <div>
+                    <h1>Foreign Exchange Markets</h1>
+                </div>
                 {this.props.graphData ?
                     <ExchangeRateGraph 
                         graphData={this.props.graphData}
