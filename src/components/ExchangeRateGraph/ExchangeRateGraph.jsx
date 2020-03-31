@@ -39,23 +39,21 @@ class ExchangeRateGraph extends Component {
         }
         dataPoints.splice(50);
         dataPoints.reverse();
-        console.log('DATA HERE', dataPoints);
         chart.render();
         dataPoints = [];
 		
     }
 
     render() {
+        let parenthIdx = this.props.graphData['Meta Data']['1. Information'].indexOf('(');
         const options = {
             title: {
               text: `From ${this.props.graphData['Meta Data']['2. From Symbol']} to ${this.props.graphData['Meta Data']['3. To Symbol']}`
             },
             theme: 'dark2',
             axisX :{
-                title: `${this.props.graphData['Meta Data']['1. Information']}`,
+                title: `${this.props.graphData['Meta Data']['1. Information'].slice(0, parenthIdx)}`,
                 labelAngle: -30,
-                // interval: 1,
-                // intervalType: "hour",
             },
             axisY: {
                 title: `${this.props.graphData['Meta Data']['3. To Symbol']}/${this.props.graphData['Meta Data']['2. From Symbol']}`,
