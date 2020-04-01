@@ -9,9 +9,6 @@ html {
 
 @media only screen and (max-width: 925px) {
     html {
-        background-image: url('../../statue-lib-sm.png');
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
+        background-image: url('../../statue-lib-test.png');
     }
 }
