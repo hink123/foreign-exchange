@@ -1,4 +1,6 @@
 
 html {
-    background-color: #33373A;
+    background-image: url('../../statue-lib.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
