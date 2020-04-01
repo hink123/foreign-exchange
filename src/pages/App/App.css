@@ -1,6 +1,17 @@
 
 html {
-    background-image: url('../../statue-lib.jpg');
+    background-image: url('../../statue-lib-lrg.png');
+    background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+@media only screen and (max-width: 925px) {
+    html {
+        background-image: url('../../statue-lib-sm.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
 }
