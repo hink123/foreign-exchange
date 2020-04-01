@@ -25,10 +25,10 @@ class CurrencySelects extends Component {
         return(
             <div>
                 <h2>Please Select Two Currencies</h2>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} className='curr-form'>
                     <div className="field">
                         <div className="control">
-                            <select name="currency1" className='input' onChange={this.handleChange}>
+                            <select name="currency1" className='select is-large has-background-primary' onChange={this.handleChange}>
                                 {CURRENCIES.map((currency, idx) => 
                                     <option value={currency[0]} key={idx}>{currency[1]}</option>
                                 )}
@@ -38,7 +38,7 @@ class CurrencySelects extends Component {
                 
                     <div className="field">
                         <div className="control">
-                            <select name="currency2" className='input' onChange={this.handleChange}>
+                            <select name="currency2" className='select is-large has-background-primary' onChange={this.handleChange}>
                                 {CURRENCIES.map((currency, idx) => 
                                     <option value={currency[0]} key={idx}>{currency[1]}</option>
                                 )}
@@ -48,7 +48,7 @@ class CurrencySelects extends Component {
 
                     <div className="field">
                         <div className="control">
-                            <select name="timeFormat" className='input' onChange={this.handleChange}>
+                            <select name="timeFormat" className='select is-large has-background-primary' onChange={this.handleChange}>
                                 <option value=''>Select the Time Series</option>
                                 <option value='FX_INTRADAY'>Intraday</option>
                                 <option value='FX_DAILY'>Daily</option>
