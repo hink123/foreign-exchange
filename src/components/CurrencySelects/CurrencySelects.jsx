@@ -47,17 +47,17 @@ class CurrencySelects extends Component {
                     </div>
 
                     <div className="field">
-                        <div className="control">
-                            <select name="timeFormat" className='select is-large has-background-primary' onChange={this.handleChange}>
+                        <div className="control last-div">
+                            <select name="timeFormat" className='select special is-large has-background-primary' onChange={this.handleChange}>
                                 <option value=''>Select the Time Series</option>
                                 <option value='FX_INTRADAY'>Intraday</option>
                                 <option value='FX_DAILY'>Daily</option>
                                 <option value='FX_WEEKLY'>Weekly</option>
                                 <option value='FX_MONTHLY'>Monthly</option>
                             </select>
+                            <button type="submit" className='button is-primary' >Submit</button>
                         </div>
                     </div>
-                    <button type="submit">Submit</button>
                 </form>
             </div>
         )

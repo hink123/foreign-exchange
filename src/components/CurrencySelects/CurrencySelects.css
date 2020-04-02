@@ -5,6 +5,11 @@ select.select {
     border: 1px solid grey;
 }
 
+select.special {
+    width: 100%;
+    margin-left: 0;
+}
+
 form.curr-form {
     margin-top: 5%;
 }
@@ -14,6 +19,10 @@ form.curr-form {
         width: 80%;
         margin-left: 10%;
         margin-right: 10%;
+    }
+
+    select.special {
+        width: 100%;
     }
 
     form.curr-form {
