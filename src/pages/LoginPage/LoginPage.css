@@ -1,0 +1,21 @@
+input.input {
+    width: 60%;
+    margin-left: 33%;
+    margin-top: 3%;
+}
+
+form.login-form {
+    margin-top: 5%;
+}
+
+@media only screen and (max-width: 925px) {
+    input.input {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    form.login-form {
+        margin-top: 12%;
+    }
+}
