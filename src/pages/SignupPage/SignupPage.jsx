@@ -38,30 +38,26 @@ class SignupPage extends Component {
                 <h1>Signup</h1>
                 <form onSubmit={this.handleSubmit}>
                     <div className="field">
-                        <label className="label">Name</label>
                         <div className="control">
-                            <input type="text" className="input" value={this.state.name} name="name" onChange={this.handleChange} placeholder='John Smith'/>
+                            <input type="text" className="input sign is-large is-primary" value={this.state.name} name="name" onChange={this.handleChange} placeholder='Name'/>
                         </div>
                     </div>
                     <div className="field">
-                        <label className="label">Email</label>
                         <div className="control">
-                            <input type="text" className="input" value={this.state.email} name="email" onChange={this.handleChange} placeholder='john.smith@gmail.com'/>
+                            <input type="text" className="input sign is-large is-primary" value={this.state.email} name="email" onChange={this.handleChange} placeholder='Email'/>
                         </div>
                     </div>
                     <div className="field">
-                        <label className="label">Password</label>
                         <div className="control">
-                            <input type="text" className="input" value={this.state.password} name="password" onChange={this.handleChange}/>
+                            <input type="text" className="input sign is-large is-primary" value={this.state.password} name="password" onChange={this.handleChange} placeholder='Password'/>
                         </div>
                     </div>
                     <div className="field">
-                        <label className="label">Confirm Password</label>
-                        <div className="control">
-                            <input type="text" className="input" value={this.state.passwordConf} name="passwordConf" onChange={this.handleChange} />
+                        <div className="control last-div">
+                            <input type="text" className="input special is-large is-primary" value={this.state.passwordConf} name="passwordConf" onChange={this.handleChange} placeholder='Confirm Password' />
+                            <button type="submit" className="button is-primary" disabled={this.isFormInvalid()}>Submit</button>
                         </div>
                     </div>
-                    <button type="submit" className="button is-primary" disabled={this.isFormInvalid()}>Submit</button>
                 </form>
             </div>
         )

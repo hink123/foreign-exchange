@@ -33,15 +33,15 @@ class LoginPage extends Component {
                 <form onSubmit={this.handleSubmit} className='login-form'>
                     <div className="field">
                         <div className="control">
-                            <input type="text" className="input is-large is-primary" value={this.state.email} name="email" onChange={this.handleChange} placeholder='Email'/>
+                            <input type="text" className="input log is-large is-primary" value={this.state.email} name="email" onChange={this.handleChange} placeholder='Email'/>
                         </div>
                     </div>
                     <div className="field">
-                        <div className="control">
-                            <input type="text" className="input is-large is-primary" value={this.state.password} name="password" onChange={this.handleChange} placeholder="Password" />
+                        <div className="control last-div">
+                            <input type="text" className="input special is-large is-primary" value={this.state.password} name="password" onChange={this.handleChange} placeholder="Password" />
+                            <button type="submit" className='button is-primary' >Submit</button>
                         </div>
                     </div>
-                    <button type="submit">Submit</button>
                 </form>
             </div>
         )

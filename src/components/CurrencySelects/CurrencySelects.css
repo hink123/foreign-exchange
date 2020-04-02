@@ -2,7 +2,7 @@ select.select {
     width: 60%;
     margin-left: 33%;
     margin-top: 3%;
-    border: none;
+    border: 1px solid grey;
 }
 
 form.curr-form {

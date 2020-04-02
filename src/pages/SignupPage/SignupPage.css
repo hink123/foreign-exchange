@@ -1,0 +1,49 @@
+input.sign {
+    width: 60%;
+    margin-left: 33%;
+    margin-top: 3%;
+}
+
+form.login-form {
+    margin-top: 5%;
+}
+
+button.button {
+    margin-top: 3%;
+    width: 10rem
+}
+
+div.last-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 33%;
+    margin-right: 6.5%;
+}
+
+input.special {
+    width: 100%;
+    margin-top: 3%;
+}
+
+@media only screen and (max-width: 925px) {
+    input.sign {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    form.login-form {
+        margin-top: 12%;
+    }
+
+    div.last-div {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    input.special {
+        width: 100%;
+    }
+}
