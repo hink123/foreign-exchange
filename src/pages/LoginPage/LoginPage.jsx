@@ -29,11 +29,13 @@ class LoginPage extends Component {
     render() {
         return (
             <div>
-                <h1>Log In</h1>
                 <form onSubmit={this.handleSubmit} className='login-form'>
                     <div className="field">
-                        <div className="control">
-                            <input type="text" className="input log is-large is-primary" value={this.state.email} name="email" onChange={this.handleChange} placeholder='Email'/>
+                        <div className="control first-div">
+                            <div className='login-title'>
+                                Login
+                            </div>
+                            <input type="text" className="input special is-large is-primary" value={this.state.email} name="email" onChange={this.handleChange} placeholder='Email'/>
                         </div>
                     </div>
                     <div className="field">
