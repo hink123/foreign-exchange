@@ -26,11 +26,11 @@ class CurrencySelects extends Component {
             <div>
                 <form onSubmit={this.handleSubmit} className='curr-form'>
                     <div className="field">
-                        <div className="control">
-                            <div>
+                        <div className="control first-div">
+                            <div className='form-title'>
                                 Foreign Exchange Markets
                             </div>
-                            <select name="currency1" className='select is-large has-background-primary' onChange={this.handleChange}>
+                            <select name="currency1" className='select special is-large has-background-primary' onChange={this.handleChange}>
                                 {CURRENCIES.map((currency, idx) => 
                                     <option value={currency[0]} key={idx}>{currency[1]}</option>
                                 )}
