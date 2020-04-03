@@ -20,7 +20,8 @@
 }
 
 .navbar-name:hover {
-    background-color: #363636;
+    color: #5DCEB3;
+    border: none;
 }
 
 button.burger {
