@@ -1,5 +1,6 @@
 .navbar-item:hover {
-    background-color: grey;
+    color: #5DCEB3;
+    border-bottom: 1px solid #5DCEB3;
 }
 
 .navbar-item {
@@ -7,12 +8,15 @@
 }
 
 .navbar-text, .navbar-name {
-    color: white;
+    color: #5DCEB3;
     padding: .5rem .75rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-shadow: white;
 }
 
 .navbar-text:hover {
-    color: white
+    color: #5DCEB3;
 }
 
 .navbar-name:hover {
