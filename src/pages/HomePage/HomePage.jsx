@@ -9,9 +9,9 @@ class HomePage extends Component {
     render() {
         return (
             <div>
-                <div>
-                    <h1>Foreign Exchange Markets</h1>
-                </div>
+                {/* <div className='fx-title'>
+                    Foreign Exchange Markets
+                </div> */}
                 {this.props.graphData ?
                     <ExchangeRateGraph 
                         graphData={this.props.graphData}

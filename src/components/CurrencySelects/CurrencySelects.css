@@ -2,7 +2,8 @@ select.select {
     width: 60%;
     margin-left: 33%;
     margin-top: 3%;
-    border: 1px solid grey;
+    border: none;
+    color: white;
 }
 
 select.special {

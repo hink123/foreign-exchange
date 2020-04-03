@@ -1,0 +1,10 @@
+div.fx-title {
+    font-size: 2rem;
+    margin-left: 50%;
+}
+
+@media only screen and (max-width: 450px) {
+    div.fx-title {
+        font-size: 1.75rem;
+    }
+}
