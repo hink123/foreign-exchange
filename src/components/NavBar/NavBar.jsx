@@ -15,7 +15,7 @@ class NavBar extends Component {
     }
     render() {
         let nav = this.props.user ?
-        <div className='navbar is-dark'>
+        <div className='navbar'>
             <div className='navbar-brand'>
                 <Link to='/' className="navbar-item navbar-text">Foreign Exchange</Link>
                 <button className={this.state.dropDown ? "navbar-burger burger is-active" : "navbar-burger burger"} aria-label="menu" aria-expanded="false" data-target="navbarDrop" onClick={this.toggleDropDown}>
@@ -35,7 +35,7 @@ class NavBar extends Component {
             </div>
         </div>
         :
-        <div className="navbar is-dark">
+        <div className="navbar">
             <div className='navbar-brand'>
                 <Link to='/' className="navbar-item navbar-text">Foreign Exchange</Link>
                 <button className={this.state.dropDown ? "navbar-burger burger is-active" : "navbar-burger burger"} aria-label="menu" aria-expanded="false" data-target="navbarDrop" onClick={this.toggleDropDown}>
