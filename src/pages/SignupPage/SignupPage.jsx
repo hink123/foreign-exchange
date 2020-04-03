@@ -45,13 +45,13 @@ class SignupPage extends Component {
                         </div>
                     </div>
                     <div className="field">
-                        <div className="control">
-                            <input type="text" className="input sign is-large is-primary" value={this.state.email} name="email" onChange={this.handleChange} placeholder='Email'/>
+                        <div className="control first-div">
+                            <input type="text" className="input special is-large is-primary" value={this.state.email} name="email" onChange={this.handleChange} placeholder='Email'/>
                         </div>
                     </div>
                     <div className="field">
-                        <div className="control">
-                            <input type="text" className="input sign is-large is-primary" value={this.state.password} name="password" onChange={this.handleChange} placeholder='Password'/>
+                        <div className="control first-div">
+                            <input type="text" className="input special is-large is-primary" value={this.state.password} name="password" onChange={this.handleChange} placeholder='Password'/>
                         </div>
                     </div>
                     <div className="field">
