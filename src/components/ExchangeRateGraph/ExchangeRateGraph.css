@@ -2,8 +2,25 @@ div.chart-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 3%;
 }
 
 button.new {
     align-self: center;
+}
+
+@media only screen and (max-width: 925px) {
+    button.new {
+        margin-top: 8%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    div.chart-container {
+        margin-top: 10%;
+    }
+
+    button.new {
+        margin-top: 10%;
+    }
 }

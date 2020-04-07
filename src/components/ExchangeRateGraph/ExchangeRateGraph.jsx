@@ -51,6 +51,7 @@ class ExchangeRateGraph extends Component {
               text: `${this.props.graphData['Meta Data']['2. From Symbol']} to ${this.props.graphData['Meta Data']['3. To Symbol']}`,
               fontColor: '#5DCEB3'
             },
+            height: 500,
             backgroundColor: 'rgba(0, 0, 0, 0.5)',
             axisX :{
                 title: `${this.props.graphData['Meta Data']['1. Information'].slice(0, parenthIdx)}`,
@@ -74,7 +75,7 @@ class ExchangeRateGraph extends Component {
         }
         return (
             <div className='chart-container'>
-                <div>
+                <div className='js-chart'>
                     <CanvasJSChart 
                         options={options}
                         onRef={ref => this.chart = ref}
