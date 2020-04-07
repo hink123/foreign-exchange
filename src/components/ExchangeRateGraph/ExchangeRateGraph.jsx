@@ -66,7 +66,6 @@ class ExchangeRateGraph extends Component {
         }
         return (
             <div>
-                <h1>Here is the graph</h1>
                 <div>
                     <CanvasJSChart 
                         options={options}
