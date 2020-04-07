@@ -73,14 +73,14 @@ class ExchangeRateGraph extends Component {
             }]
         }
         return (
-            <div>
+            <div className='chart-container'>
                 <div>
                     <CanvasJSChart 
                         options={options}
                         onRef={ref => this.chart = ref}
                     />
                 </div>
-                <button onClick={this.props.handleNewSearch}>New Search</button>
+                <button onClick={this.props.handleNewSearch} className='is-primary button new'>New Search</button>
             </div>
         )
     }

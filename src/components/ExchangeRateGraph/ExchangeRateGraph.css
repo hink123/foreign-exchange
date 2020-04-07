@@ -1,0 +1,9 @@
+div.chart-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+button.new {
+    align-self: center;
+}
