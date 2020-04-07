@@ -48,20 +48,24 @@ class ExchangeRateGraph extends Component {
         let parenthIdx = this.props.graphData['Meta Data']['1. Information'].indexOf('(');
         const options = {
             title: {
-              text: `From ${this.props.graphData['Meta Data']['2. From Symbol']} to ${this.props.graphData['Meta Data']['3. To Symbol']}`
+              text: `From ${this.props.graphData['Meta Data']['2. From Symbol']} to ${this.props.graphData['Meta Data']['3. To Symbol']}`,
+              fontColor: '#5DCEB3'
             },
-            theme: 'dark2',
+            // theme: 'dark2',
             axisX :{
                 title: `${this.props.graphData['Meta Data']['1. Information'].slice(0, parenthIdx)}`,
                 labelAngle: -30,
+                titleFontColor: '#5DCEB3'
             },
             axisY: {
                 title: `${this.props.graphData['Meta Data']['3. To Symbol']}/${this.props.graphData['Meta Data']['2. From Symbol']}`,
-                includeZero: false
+                includeZero: false,
+                titleFontColor: '#5DCEB3'
             },
             data: [{				
                 type: "line",
-                dataPoints: dataPoints
+                dataPoints: dataPoints,
+                color: '#5DCEB3'
             }]
         }
         return (
