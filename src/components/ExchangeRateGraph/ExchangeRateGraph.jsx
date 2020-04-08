@@ -58,14 +58,16 @@ class ExchangeRateGraph extends Component {
                 labelAngle: -30,
                 titleFontColor: '#5DCEB3',
                 labelFontColor: 'white',
-                lineColor: 'white'
+                lineColor: 'white',
+                margin: 10
             },
             axisY: {
                 title: `${this.props.graphData['Meta Data']['3. To Symbol']}/${this.props.graphData['Meta Data']['2. From Symbol']}`,
                 includeZero: false,
                 titleFontColor: '#5DCEB3',
                 labelFontColor: 'white',
-                lineColor: 'white'
+                lineColor: 'white',
+                margin: 10
             },
             data: [{				
                 type: "line",
