@@ -44,6 +44,12 @@ class ExchangeRateGraph extends Component {
 		
     }
 
+    handleTimeChange = async (e) => {
+        e.preventDefault();
+        await this.props.handleExchangeRateSearch(this.props.graphData['Meta Data']['2. From Symbol'], this.props.graphData['Meta Data']['3. To Symbol'], e.target.name);
+        this.componentDidMount();
+    }
+
     render() {
         let parenthIdx = this.props.graphData['Meta Data']['1. Information'].indexOf('(');
         const options = {
@@ -82,6 +88,12 @@ class ExchangeRateGraph extends Component {
                         options={options}
                         onRef={ref => this.chart = ref}
                     />
+                </div>
+                <div>
+                    <button name='FX_INTRADAY' onClick={this.handleTimeChange}>Intraday</button>
+                    <button name='FX_DAILY' onClick={this.handleTimeChange}>Daily</button>
+                    <button name='FX_WEEKLY' onClick={this.handleTimeChange}>Weekly</button>
+                    <button name='FX_MONTHLY' onClick={this.handleTimeChange}>Monthly</button>
                 </div>
                 <button onClick={this.props.handleNewSearch} className='is-primary button new'>New Search</button>
             </div>

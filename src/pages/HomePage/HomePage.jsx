@@ -14,6 +14,7 @@ class HomePage extends Component {
                         graphData={this.props.graphData}
                         handleNewSearch={this.props.handleNewSearch}
                         timeFormat={this.props.timeFormat}
+                        handleExchangeRateSearch={this.props.handleExchangeRateSearch}
                     />
                     :
                     <CurrencySelects 
