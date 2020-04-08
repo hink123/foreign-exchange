@@ -48,7 +48,8 @@ class App extends Component {
   handleNewSearch = () => {
     this.setState({
       graphData: '',
-      timeFormat: ''
+      timeFormat: '',
+      message: ''
     });
   }
 
@@ -67,6 +68,7 @@ class App extends Component {
                 <HomePage 
                   timeFormat={this.state.timeFormat}
                   graphData={this.state.graphData}
+                  message={this.state.message}
                   handleExchangeRateSearch={this.handleExchangeRateSearch}
                   handleNewSearch={this.handleNewSearch}
                 />

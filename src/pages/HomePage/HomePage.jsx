@@ -12,6 +12,7 @@ class HomePage extends Component {
                 {this.props.graphData ?
                     <ExchangeRateGraph 
                         graphData={this.props.graphData}
+                        message={this.props.message}
                         handleNewSearch={this.props.handleNewSearch}
                         timeFormat={this.props.timeFormat}
                         handleExchangeRateSearch={this.props.handleExchangeRateSearch}

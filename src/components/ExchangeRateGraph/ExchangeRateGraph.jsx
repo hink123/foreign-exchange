@@ -89,12 +89,13 @@ class ExchangeRateGraph extends Component {
                         onRef={ref => this.chart = ref}
                     />
                 </div>
-                <div>
-                    <button name='FX_INTRADAY' onClick={this.handleTimeChange}>Intraday</button>
-                    <button name='FX_DAILY' onClick={this.handleTimeChange}>Daily</button>
-                    <button name='FX_WEEKLY' onClick={this.handleTimeChange}>Weekly</button>
-                    <button name='FX_MONTHLY' onClick={this.handleTimeChange}>Monthly</button>
+                <div className='button-container'>
+                    <button className='is-primary button' name='FX_INTRADAY' onClick={this.handleTimeChange}>Intraday</button>
+                    <button className='is-primary button' name='FX_DAILY' onClick={this.handleTimeChange}>Daily</button>
+                    <button className='is-primary button' name='FX_WEEKLY' onClick={this.handleTimeChange}>Weekly</button>
+                    <button className='is-primary button' name='FX_MONTHLY' onClick={this.handleTimeChange}>Monthly</button>
                 </div>
+                <div>{this.props.message}</div>
                 <button onClick={this.props.handleNewSearch} className='is-primary button new'>New Search</button>
             </div>
         )

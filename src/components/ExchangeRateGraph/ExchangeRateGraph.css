@@ -5,6 +5,10 @@ div.chart-container {
     margin-top: 3%;
 }
 
+div.button-container {
+    align-self: center;
+}
+
 button.new {
     align-self: center;
 }
