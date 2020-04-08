@@ -15,7 +15,8 @@ class App extends Component {
     this.state = {
       user: userService.getUser(),
       graphData: '',
-      timeFormat: ''
+      timeFormat: '',
+      message: ''
     }
   }
 
@@ -30,11 +31,18 @@ class App extends Component {
 
   handleExchangeRateSearch = async (curr1, curr2, timeFormat) => {
     let exchangeRateData = await getExchangeRate(curr1, curr2, timeFormat);
-    this.setState({
-      graphData: exchangeRateData,
-      timeFormat: timeFormat
-    });
     console.log(exchangeRateData);
+    if(exchangeRateData['Note']) {
+      this.setState({
+        message: 'Exceeded Server Requests'
+      });
+    } else {
+      this.setState({
+        graphData: exchangeRateData,
+        timeFormat: timeFormat,
+        message: ''
+      });
+    }
   }
 
   handleNewSearch = () => {
