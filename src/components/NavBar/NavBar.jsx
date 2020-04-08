@@ -18,7 +18,7 @@ class NavBar extends Component {
         <div className='navbar'>
             <div className='navbar-brand'>
                 <div className='navbar-item'>
-                    <Link to='/' className="navbar-text">Foreign Exchange</Link>
+                    <Link to='/' className="navbar-text" onClick={this.props.handleNewSearch}>Foreign Exchange</Link>
                 </div>
                 <button className={this.state.dropDown ? "navbar-burger burger is-active" : "navbar-burger burger"} aria-label="menu" aria-expanded="false" data-target="navbarDrop" onClick={this.toggleDropDown}>
                         <span aria-hidden="true"></span>
@@ -40,7 +40,7 @@ class NavBar extends Component {
         <div className="navbar">
             <div className='navbar-brand'>
                 <div className='navbar-item'>
-                    <Link to='/' className="navbar-text">Foreign Exchange</Link>
+                    <Link to='/' className="navbar-text" onClick={this.props.handleNewSearch}>Foreign Exchange</Link>
                 </div>
                 <button className={this.state.dropDown ? "navbar-burger burger is-active" : "navbar-burger burger"} aria-label="menu" aria-expanded="false" data-target="navbarDrop" onClick={this.toggleDropDown}>
                         <span aria-hidden="true"></span>

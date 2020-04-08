@@ -50,6 +50,7 @@ class App extends Component {
         <NavBar 
           user={this.state.user} 
           handleLogout={this.handleLogout}
+          handleNewSearch={this.handleNewSearch}
         />
         <div className="container">
 
