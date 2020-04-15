@@ -43,6 +43,13 @@ button.heart:hover {
     background-color: red;
 }
 
+div.test-time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 @media only screen and (max-width: 925px) {
     button.new {
         margin-top: 5%;
