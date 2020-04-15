@@ -34,6 +34,8 @@ div.special-message {
 button.heart {
     color: red;
     background-color: pink;
+    width: fit-content;
+    margin-right: 1rem;
 }
 
 button.heart:hover {
