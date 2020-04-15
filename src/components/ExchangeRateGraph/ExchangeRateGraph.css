@@ -31,6 +31,16 @@ div.special-message {
     text-shadow: 0px 0px 8px white;
 }
 
+button.heart {
+    color: red;
+    background-color: pink;
+}
+
+button.heart:hover {
+    color: pink;
+    background-color: red;
+}
+
 @media only screen and (max-width: 925px) {
     button.new {
         margin-top: 5%;
