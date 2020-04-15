@@ -96,7 +96,10 @@ class ExchangeRateGraph extends Component {
                     <button className='is-primary button time' disabled={(this.props.timeFormat==='FX_WEEKLY')} name='FX_WEEKLY' onClick={this.handleTimeChange}>Weekly</button>
                     <button className='is-primary button time' disabled={(this.props.timeFormat==='FX_MONTHLY')} name='FX_MONTHLY' onClick={this.handleTimeChange}>Monthly</button>
                 </div>
-                <button onClick={this.props.handleNewSearch} className='is-primary button new'>New Search</button>
+                <div>
+                    <button>&hearts;</button>
+                    <button onClick={this.props.handleNewSearch} className='is-primary button new'>New Search</button>
+                </div>
             </div>
         )
     }
