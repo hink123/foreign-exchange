@@ -53,6 +53,10 @@ class App extends Component {
     });
   }
 
+  addToFavorites = async (curr1, curr2) => {
+    
+  }
+
   render() {
     return (
       <div className="App">
