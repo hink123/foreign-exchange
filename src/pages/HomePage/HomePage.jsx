@@ -17,6 +17,7 @@ class HomePage extends Component {
                         timeFormat={this.props.timeFormat}
                         handleExchangeRateSearch={this.props.handleExchangeRateSearch}
                         addToFavorites={this.props.addToFavorites}
+                        user={this.props.user}
                     />
                     :
                     <CurrencySelects 

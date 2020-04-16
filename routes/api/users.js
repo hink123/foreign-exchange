@@ -5,7 +5,7 @@ const usersCtrl = require('../../controllers/users');
 router.post('/signup', usersCtrl.signup);
 router.post('/login', usersCtrl.login);
 router.use(require('../../config/auth'));
-router.post('/favorite', checkAuth, usersCtrl.addFavorite);
+router.post('/favorites', checkAuth, usersCtrl.addFavorite);
 
 module.exports = router;
 

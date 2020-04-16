@@ -40,7 +40,10 @@ async function login(req, res) {
 }
 
 async function addFavorite(req, res) {
-    
+    const user = await User.findOne({"_id": req.user._id});
+    user.favorites.push(req.body);
+    user.save();
+    res.status(200).json(user);
 }
 
 
