@@ -53,8 +53,8 @@ class App extends Component {
     });
   }
 
-  addToFavorites = async (curr1, curr2) => {
-
+  addToFavorites = (curr1, curr2) => {
+    console.log(curr1, curr2);
   }
 
   render() {

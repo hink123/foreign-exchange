@@ -37,6 +37,17 @@ function login(creds) {
     .then(({token}) => tokenService.setToken(token));
 }
 
+function addFavorite(currencies) {
+    return fetch(BASE_URL + 'favorites', {
+        method: 'POST',
+        headers: new Headers({
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + tokenService.getToken()
+        }),
+        body: JSON.stringify(currencies)
+    }).then(res => res.json());
+}
+
 export default {
     signup,
     getUser,
