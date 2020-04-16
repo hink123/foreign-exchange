@@ -4,7 +4,8 @@ const SECRET = process.env.SECRET;
 
 module.exports = {
     signup,
-    login
+    login,
+    addFavorite 
 }
 
 async function signup(req, res) {
@@ -36,6 +37,10 @@ async function login(req, res) {
     } catch (err) {
         return res.status(401).json(err);
     }
+}
+
+async function addFavorite(req, res) {
+    
 }
 
 

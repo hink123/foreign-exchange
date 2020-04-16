@@ -12,7 +12,8 @@ const userSchema = new Schema ({
         lowercase: true,
         unique: true
     },
-    password: String
+    password: String,
+    favorites: []
 }, {
     timestamps: true
 })
