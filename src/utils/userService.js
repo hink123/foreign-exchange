@@ -52,5 +52,6 @@ export default {
     signup,
     getUser,
     logout, 
-    login
+    login,
+    addFavorite
 };

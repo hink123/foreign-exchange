@@ -53,8 +53,9 @@ class App extends Component {
     });
   }
 
-  addToFavorites = (curr1, curr2) => {
-    console.log(curr1, curr2);
+  addToFavorites = async (curr1, curr2) => {
+    let data = await userService.addFavorite([curr1, curr2]);
+    console.log(data);
   }
 
   render() {
