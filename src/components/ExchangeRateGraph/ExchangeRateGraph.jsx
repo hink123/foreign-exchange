@@ -52,7 +52,7 @@ class ExchangeRateGraph extends Component {
 
     handleHeartClick = async (e) => {
         e.preventDefault();
-        
+        await this.props.addToFavorites(this.props.graphData['Meta Data']['2. From Symbol'], this.props.graphData['Meta Data']['3. To Symbol']);
     }
 
     render() {

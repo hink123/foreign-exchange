@@ -54,7 +54,7 @@ class App extends Component {
   }
 
   addToFavorites = async (curr1, curr2) => {
-    
+
   }
 
   render() {
@@ -75,6 +75,7 @@ class App extends Component {
                   message={this.state.message}
                   handleExchangeRateSearch={this.handleExchangeRateSearch}
                   handleNewSearch={this.handleNewSearch}
+                  addToFavorites={this.addToFavorites}
                 />
               )}/>
 
