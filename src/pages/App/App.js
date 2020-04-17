@@ -6,6 +6,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import HomePage from '../HomePage/HomePage';
 import userService from '../../utils/userService';
 import {getExchangeRate} from '../../services/fx-api';
+import FavoritesList from '../../components/FavoritesList/FavoritesList';
 import './App.css';
 
 class App extends Component {
@@ -84,7 +85,7 @@ class App extends Component {
               )}/>
 
               <Route exact path="/favorites" render={() => (
-                <h1>Favorites Page</h1>
+                <FavoritesList />
               )}/>
 
               <Route exact path="/signup" render={({history}) => (
