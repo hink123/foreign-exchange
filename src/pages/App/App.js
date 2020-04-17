@@ -55,7 +55,9 @@ class App extends Component {
 
   addToFavorites = async (curr1, curr2) => {
     let user = await userService.addFavorite([curr1, curr2]);
-    console.log(user);
+    this.setState({
+      user: user
+    })
   }
 
   render() {
