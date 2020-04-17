@@ -85,7 +85,9 @@ class App extends Component {
               )}/>
 
               <Route exact path="/favorites" render={() => (
-                <FavoritesList />
+                <FavoritesList 
+                  user={this.state.user}
+                />
               )}/>
 
               <Route exact path="/signup" render={({history}) => (

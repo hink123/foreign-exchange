@@ -6,7 +6,17 @@ class FavoritesList extends Component {
 
     render() {
         return (
-            <h1>Hello</h1>
+            <div>
+                {this.props.user.favorites.map((fav, idx) => 
+                    <div>
+                        <button>X</button>
+                        <div>
+                            {fav[0]} to {fav[1]}
+                        </div>
+                    </div>
+                )}
+
+            </div>
         )
     }
 }
