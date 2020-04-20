@@ -48,6 +48,16 @@ function addFavorite(currencies) {
     }).then(res => res.json());
 }
 
+function deleteFavorite(idx) {
+    return fetch(`${BASE_URL}favorites/${idx}`, {
+        method: 'DELETE',
+        headers: new Headers({
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + tokenService.getToken()
+        })
+    }).then(res => res.json());
+}
+
 export default {
     signup,
     getUser,
