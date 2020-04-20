@@ -13,8 +13,8 @@ class FavoritesList extends Component {
         return (
             <div>
                 {this.props.user.favorites.map((fav, idx) => 
-                    <div>
-                        <button id={idx}>X</button>
+                    <div key={idx}>
+                        <button onClick={this.handleDelete} id={idx}>X</button>
                         <div>
                             {fav[0]} to {fav[1]}
                         </div>

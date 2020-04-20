@@ -63,7 +63,9 @@ class App extends Component {
 
   deleteFavorite = async (idx) => {
     let user = await userService.deleteFavorite(idx);
-    console.log(user);
+    this.setState({
+      user: user
+    })
   }
 
   render() {
@@ -92,6 +94,7 @@ class App extends Component {
               <Route exact path="/favorites" render={() => (
                 <FavoritesList 
                   user={this.state.user}
+                  deleteFavorite={this.deleteFavorite}
                 />
               )}/>
 

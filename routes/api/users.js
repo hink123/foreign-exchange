@@ -6,6 +6,7 @@ router.post('/signup', usersCtrl.signup);
 router.post('/login', usersCtrl.login);
 router.use(require('../../config/auth'));
 router.post('/favorites', checkAuth, usersCtrl.addFavorite);
+router.delete('/favorites/:id', checkAuth, usersCtrl.deleteOne)
 
 module.exports = router;
 
