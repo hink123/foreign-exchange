@@ -61,6 +61,11 @@ class App extends Component {
     })
   }
 
+  deleteFavorite = async (idx) => {
+    let user = await userService.deleteFavorite(idx);
+    console.log(user);
+  }
+
   render() {
     return (
       <div className="App">

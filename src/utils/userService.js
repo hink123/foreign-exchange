@@ -53,5 +53,6 @@ export default {
     getUser,
     logout, 
     login,
-    addFavorite
+    addFavorite,
+    deleteFavorite
 };
