@@ -4,6 +4,19 @@ const SALT_ROUNDS = 6;
 
 var Schema = mongoose.Schema;
 
+var favoriteSchema = new Schema({
+    curr1: {
+        type: String,
+        required: true
+    },
+    curr2: {
+        type: String,
+        required: true
+    }
+}, {
+    timestamps: true
+});
+
 const userSchema = new Schema ({
     name: String,
     email: {
@@ -13,7 +26,7 @@ const userSchema = new Schema ({
         unique: true
     },
     password: String,
-    favorites: []
+    favorites: [favoriteSchema]
 }, {
     timestamps: true
 })
