@@ -1,6 +1,8 @@
 import React, {Component} from 'react'; 
 import CanvasJSReact from '../../services/canvasjs.react';
+import favoritesService from '../../utils/favoritesService';
 import './ExchangeRateGraph.css';
+
 
 //var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
@@ -8,6 +10,11 @@ var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 var dataPoints=[]
 
 class ExchangeRateGraph extends Component {
+
+    state = {
+        curr1: '',
+        curr2: ''
+    }
 
     componentDidMount() {
         let timeSeriesFX = '';
@@ -41,6 +48,11 @@ class ExchangeRateGraph extends Component {
         dataPoints.reverse();
         chart.render();
         dataPoints = [];
+
+        this.setState({
+            curr1: this.props.graphData['Meta Data']['2. From Symbol'],
+            curr2: this.props.graphData['Meta Data']['3. To Symbol']
+        })
 		
     }
 
@@ -52,7 +64,9 @@ class ExchangeRateGraph extends Component {
 
     handleHeartClick = async (e) => {
         e.preventDefault();
-        await this.props.addToFavorites(this.props.graphData['Meta Data']['2. From Symbol'], this.props.graphData['Meta Data']['3. To Symbol']);
+        // await this.props.addToFavorites(this.props.graphData['Meta Data']['2. From Symbol'], this.props.graphData['Meta Data']['3. To Symbol']);
+        let user = await favoritesService.addFavorite(this.state);
+        console.log('DONE', user);
     }
 
     render() {

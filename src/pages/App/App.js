@@ -54,9 +54,9 @@ class App extends Component {
     });
   }
 
-  addToFavorites = async (curr1, curr2) => {
-    await userService.addFavorite([curr1, curr2]);
-  }
+  // addToFavorites = async (curr1, curr2) => {
+  //   await userService.addFavorite([curr1, curr2]);
+  // }
 
   deleteFavorite = async (idx) => {
     await userService.deleteFavorite(idx);
