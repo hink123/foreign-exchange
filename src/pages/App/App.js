@@ -55,16 +55,13 @@ class App extends Component {
   }
 
   addToFavorites = async (curr1, curr2) => {
-    let user = await userService.addFavorite([curr1, curr2]);
-    this.setState({
-      user: user
-    })
+    await userService.addFavorite([curr1, curr2]);
   }
 
   deleteFavorite = async (idx) => {
-    let user = await userService.deleteFavorite(idx);
+    await userService.deleteFavorite(idx);
     this.setState({
-      user: user
+      user: userService.getUser()
     })
   }
 
@@ -93,7 +90,6 @@ class App extends Component {
 
               <Route exact path="/favorites" render={() => (
                 <FavoritesList 
-                  user={this.state.user}
                   deleteFavorite={this.deleteFavorite}
                   handleExchangeRateSearch={this.handleExchangeRateSearch}
                 />
