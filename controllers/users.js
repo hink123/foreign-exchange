@@ -38,19 +38,19 @@ async function login(req, res) {
     }
 }
 
-async function addFavorite(req, res) {
-    const user = await User.findOne({"_id": req.user._id});
-    user.favorites.push(req.body);
-    user.save();
-    res.status(200).json(user);
-}
+// async function addFavorite(req, res) {
+//     const user = await User.findOne({"_id": req.user._id});
+//     user.favorites.push(req.body);
+//     user.save();
+//     res.status(200).json(user);
+// }
 
-async function deleteOne(req, res) {
-    const user = await User.findOne({"_id": req.user._id});
-    user.favorites.splice(req.params.id, 1);
-    user.save();
-    res.status(200).json(user);
-}
+// async function deleteOne(req, res) {
+//     const user = await User.findOne({"_id": req.user._id});
+//     user.favorites.splice(req.params.id, 1);
+//     user.save();
+//     res.status(200).json(user);
+// }
 
 
 
