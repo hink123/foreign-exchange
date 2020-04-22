@@ -1,7 +1,7 @@
 import React, {Component} from 'react'; 
 import CanvasJSReact from '../../services/canvasjs.react';
-import favoritesService from '../../utils/favoritesService';
-import userService from '../../utils/userService';
+// import favoritesService from '../../utils/favoritesService';
+// import userService from '../../utils/userService';
 import './ExchangeRateGraph.css';
 
 
@@ -62,17 +62,18 @@ class ExchangeRateGraph extends Component {
         this.componentDidMount();
     }
 
-    handleHeartClick = async (e) => {
+    handleHeartClick = (e) => {
         // e.preventDefault();
         // await this.props.addToFavorites(this.props.graphData['Meta Data']['2. From Symbol'], this.props.graphData['Meta Data']['3. To Symbol']);
-        try {
-            let user = await favoritesService.addFavorite(this.state);
-            console.log('DONE', user);
-            console.log('OR AM I', userService.getUser());
-        } catch (err) {
-            console.log('Fail');
-            throw err;
-        }
+        // try {
+        //     let user = await favoritesService.addFavorite(this.state);
+        //     console.log('DONE', user);
+        //     console.log('OR AM I', userService.getUser());
+        // } catch (err) {
+        //     console.log('Fail');
+        //     throw err;
+        // }
+        this.props.addToFavorites(this.state);
     }
 
     render() {

@@ -5,6 +5,7 @@ import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import HomePage from '../HomePage/HomePage';
 import userService from '../../utils/userService';
+import favoritesService from '../../utils/favoritesService';
 import {getExchangeRate} from '../../services/fx-api';
 import FavoritesList from '../../components/FavoritesList/FavoritesList';
 import './App.css';
@@ -54,9 +55,18 @@ class App extends Component {
     });
   }
 
-  // addToFavorites = async (curr1, curr2) => {
-  //   await userService.addFavorite([curr1, curr2]);
-  // }
+  addToFavorites = async (currencies) => {
+    try {
+      let user = await favoritesService.addFavorite(currencies);
+      console.log('DONE', user);
+      this.setState({
+        user: user
+      });
+    } catch (err) {
+      console.log('Fail');
+      throw err;
+    }
+  }
 
   deleteFavorite = async (idx) => {
     await userService.deleteFavorite(idx);
