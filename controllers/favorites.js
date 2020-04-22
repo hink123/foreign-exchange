@@ -6,10 +6,16 @@ module.exports = {
 }
 
 async function create(req, res) {
-    const user = await User.findOne({"_id": req.user._id});
-    user.favorites.push(req.body);
-    user.save();
-    res.status(200).json(user);
+    console.log('REQ.BODY', req.body);
+    try {
+        const user = await User.findOne({"_id": req.user._id});
+        user.favorites.push(req.body);
+        user.save();
+        res.status(200).json(user);
+    } catch (err) {
+        console.log('Oops something went wrong!')
+        res.json({err});
+    }
 }
 
 async function deleteOne(req, res) {

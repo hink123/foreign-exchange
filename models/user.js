@@ -7,11 +7,9 @@ var Schema = mongoose.Schema;
 var favoriteSchema = new Schema({
     curr1: {
         type: String,
-        required: true
     },
     curr2: {
         type: String,
-        required: true
     }
 }, {
     timestamps: true

@@ -1,6 +1,7 @@
 import React, {Component} from 'react'; 
 import CanvasJSReact from '../../services/canvasjs.react';
 import favoritesService from '../../utils/favoritesService';
+import userService from '../../utils/userService';
 import './ExchangeRateGraph.css';
 
 
@@ -17,6 +18,11 @@ class ExchangeRateGraph extends Component {
     }
 
     componentDidMount() {
+        this.setState({
+            curr1: this.props.graphData['Meta Data']['2. From Symbol'],
+            curr2: this.props.graphData['Meta Data']['3. To Symbol']
+        });
+
         let timeSeriesFX = '';
         if(this.props.timeFormat==='FX_INTRADAY') {
             timeSeriesFX = this.props.graphData['Time Series FX (60min)'];
@@ -47,13 +53,7 @@ class ExchangeRateGraph extends Component {
         dataPoints.splice(50);
         dataPoints.reverse();
         chart.render();
-        dataPoints = [];
-
-        this.setState({
-            curr1: this.props.graphData['Meta Data']['2. From Symbol'],
-            curr2: this.props.graphData['Meta Data']['3. To Symbol']
-        })
-		
+        dataPoints = [];	
     }
 
     handleTimeChange = async (e) => {
@@ -63,10 +63,16 @@ class ExchangeRateGraph extends Component {
     }
 
     handleHeartClick = async (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         // await this.props.addToFavorites(this.props.graphData['Meta Data']['2. From Symbol'], this.props.graphData['Meta Data']['3. To Symbol']);
-        let user = await favoritesService.addFavorite(this.state);
-        console.log('DONE', user);
+        try {
+            let user = await favoritesService.addFavorite(this.state);
+            console.log('DONE', user);
+            console.log('OR AM I', userService.getUser());
+        } catch (err) {
+            console.log('Fail');
+            throw err;
+        }
     }
 
     render() {
