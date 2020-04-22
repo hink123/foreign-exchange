@@ -102,6 +102,7 @@ class App extends Component {
                 <FavoritesList 
                   deleteFavorite={this.deleteFavorite}
                   handleExchangeRateSearch={this.handleExchangeRateSearch}
+                  user={this.state.user}
                 />
               )}/>
 

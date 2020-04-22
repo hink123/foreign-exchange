@@ -4,12 +4,12 @@ import './FavoritesList.css';
 import userService from '../../utils/userService';
 
 class FavoritesList extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            user: userService.getUser()
-        }
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         user: userService.getUser()
+    //     }
+    // }
 
     handleDelete = async (e) => {
         e.preventDefault();
@@ -20,16 +20,16 @@ class FavoritesList extends Component {
         this.props.handleExchangeRateSearch(JSON.parse(e.target.id).curr1, JSON.parse(e.target.id).curr2, 'FX_DAILY');
     }
 
-    componentDidMount() {
-        this.setState({
-            user: userService.getUser()
-        })
-    }
+    // componentDidMount() {
+    //     this.setState({
+    //         user: userService.getUser()
+    //     })
+    // }
 
     render() {
         return (
             <div>
-                {this.state.user.favorites.map((fav, idx) => 
+                {this.props.user.favorites.map((fav, idx) => 
                     <div key={idx}>
                         <button onClick={this.handleDelete} id={idx}>X</button>
                         <Link to='/' onClick={this.handleClick} id={JSON.stringify(fav)}>
