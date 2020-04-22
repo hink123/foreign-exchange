@@ -17,8 +17,8 @@ class ExchangeRateGraph extends Component {
         curr2: ''
     }
 
-    componentDidMount() {
-        this.setState({
+    async componentDidMount() {
+        await this.setState({
             curr1: this.props.graphData['Meta Data']['2. From Symbol'],
             curr2: this.props.graphData['Meta Data']['3. To Symbol']
         });
