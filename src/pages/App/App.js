@@ -18,8 +18,16 @@ class App extends Component {
       user: userService.getUser(),
       graphData: '',
       timeFormat: '',
-      message: ''
+      message: '',
+      favorites: ''
     }
+  }
+
+  componentDidMount() {
+    let favorites = favoritesService.getFavorites();
+    this.setState({
+      favorites: favorites
+    })
   }
 
   handleLogout = () => {
