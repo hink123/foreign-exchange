@@ -17,8 +17,8 @@ class FavoritesList extends Component {
     }
 
     handleClick = (e) => {
-        console.log('LOOK HERE', e.target.id)
-        this.props.handleExchangeRateSearch(e.target.id.slice(0, 3), e.target.id.slice(4), 'FX_DAILY');
+        console.log('LOOK HERE', JSON.parse(e.target.id).curr1);
+        this.props.handleExchangeRateSearch(JSON.parse(e.target.id).curr1, JSON.parse(e.target.id).curr2, 'FX_DAILY');
     }
 
     componentDidMount() {
@@ -33,8 +33,8 @@ class FavoritesList extends Component {
                 {this.state.user.favorites.map((fav, idx) => 
                     <div key={idx}>
                         <button onClick={this.handleDelete} id={idx}>X</button>
-                        <Link to='/' onClick={this.handleClick} id={fav}>
-                            {fav[0]} to {fav[1]}
+                        <Link to='/' onClick={this.handleClick} id={JSON.stringify(fav)}>
+                            {fav.curr1} to {fav.curr2}
                         </Link>
                     </div>
                 )}
