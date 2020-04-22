@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const Favorite = require('../models/favorite');
 
 module.exports = {
     create,
@@ -6,12 +7,16 @@ module.exports = {
 }
 
 async function create(req, res) {
-    console.log('REQ.BODY', req.body);
     try {
-        const user = await User.findOne({"_id": req.user._id});
-        user.favorites.push(req.body);
-        user.save();
-        res.status(200).json(user);
+        req.body.user = req.user._id;
+        console.log('REQ.BODY', req.body);
+        let favorite = new Favorite(req.body);
+        await favorite.save();
+        res.status(200).json(favorite);
+        // const user = await User.findOne({"_id": req.user._id});
+        // user.favorites.push(req.body);
+        // user.save();
+        // res.status(200).json(user);
     } catch (err) {
         console.log('Oops something went wrong!')
         res.json({err});
