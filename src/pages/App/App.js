@@ -75,10 +75,7 @@ class App extends Component {
   }
 
   deleteFavorite = async (idx) => {
-    await userService.deleteFavorite(idx);
-    this.setState({
-      user: userService.getUser()
-    })
+    await favoritesService.deleteFavorite(idx);
   }
 
   async componentDidMount() {

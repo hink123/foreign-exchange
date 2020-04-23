@@ -10,7 +10,6 @@ module.exports = {
 async function create(req, res) {
     try {
         req.body.user = req.user._id;
-        console.log('REQ.BODY', req.body);
         let favorite = new Favorite(req.body);
         await favorite.save();
         res.status(200).json(favorite);
@@ -21,11 +20,8 @@ async function create(req, res) {
 }
 
 async function deleteOne(req, res) {
-    let idx = req.params.id;
-    const user = await User.findOne({"_id": req.user._id});
-    user.favorites[idx].remove();
-    user.save();
-    res.status(200).json(user);
+    const deletedFav = await Favorite.findByIdAndRemove(req.params.id);
+    res.status(200).json(deletedFav);
 }
 
 async function index(req, res) {
