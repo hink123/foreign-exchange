@@ -26,7 +26,6 @@ function getFavorites() {
     return fetch(BASE_URL, {
         method: 'GET',
         headers: new Headers({
-            'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + tokenService.getToken()
         })
     }).then(res => res.json());

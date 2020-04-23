@@ -3,6 +3,7 @@ const router = express.Router();
 const favoritesCtrl = require('../../controllers/favorites');
 
 router.use(require('../../config/auth'));
+router.get('/', checkAuth, favoritesCtrl.index)
 router.post('/', checkAuth, favoritesCtrl.create);
 router.delete('/:id', checkAuth, favoritesCtrl.deleteOne)
 

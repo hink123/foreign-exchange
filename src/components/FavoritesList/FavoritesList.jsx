@@ -29,7 +29,7 @@ class FavoritesList extends Component {
     render() {
         return (
             <div>
-                {this.props.user.favorites.map((fav, idx) => 
+                {this.props.favorites.map((fav, idx) => 
                     <div key={idx}>
                         <button onClick={this.handleDelete} id={idx}>X</button>
                         <Link to='/' onClick={this.handleClick} id={JSON.stringify(fav)}>

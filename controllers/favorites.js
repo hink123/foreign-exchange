@@ -3,7 +3,8 @@ const Favorite = require('../models/favorite');
 
 module.exports = {
     create,
-    deleteOne
+    deleteOne, 
+    index
 }
 
 async function create(req, res) {
@@ -29,4 +30,10 @@ async function deleteOne(req, res) {
     user.favorites[idx].remove();
     user.save();
     res.status(200).json(user);
+}
+
+async function index(req, res) {
+    const favorites = await Favorite.find({user: req.user._id});
+    console.log('FAVORITES', favorites);
+    res.status(200).json(favorites);
 }

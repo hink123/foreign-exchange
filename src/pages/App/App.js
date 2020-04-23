@@ -23,7 +23,7 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
+  handleFavorites = () => {
     let favorites = favoritesService.getFavorites();
     this.setState({
       favorites: favorites
@@ -35,8 +35,11 @@ class App extends Component {
     this.setState({user: null});
   }
 
-  handleSignupOrLogin = () => {
-    this.setState({user: userService.getUser()});
+  handleSignupOrLogin = async () => {
+    await this.setState({user: userService.getUser()});
+    if(this.state.user) {
+      this.handleFavorites();
+    }
   }
 
   handleExchangeRateSearch = async (curr1, curr2, timeFormat) => {
@@ -65,11 +68,9 @@ class App extends Component {
 
   addToFavorites = async (currencies) => {
     try {
-      let user = await favoritesService.addFavorite(currencies);
-      console.log('DONE', user);
-      this.setState({
-        user: user
-      });
+      let fav = await favoritesService.addFavorite(currencies);
+      console.log('DONE', fav);
+      this.handleFavorites();
     } catch (err) {
       console.log('Fail');
       throw err;
@@ -111,6 +112,7 @@ class App extends Component {
                   deleteFavorite={this.deleteFavorite}
                   handleExchangeRateSearch={this.handleExchangeRateSearch}
                   user={this.state.user}
+                  favorites={this.state.favorites}
                 />
               )}/>
 
