@@ -23,25 +23,6 @@ class App extends Component {
     }
   }
 
-  // componentDidMount() {
-  //   if(this.state.user) {
-  //     this.handleFavorites();
-  //   }
-  // }
-
-  // handleFavorites = async () => {
-  //   if(this.state.user) {
-  //     let favorites = await favoritesService.getFavorites();
-  //     this.setState({
-  //       favorites: favorites
-  //     })
-  //   } 
-  // }
-
-  handleUpdateFavorites = (favorites) => {
-    this.setState({ favorites })
-  }
-
   handleLogout = () => {
     userService.logout();
     this.setState({
@@ -56,7 +37,6 @@ class App extends Component {
 
   handleExchangeRateSearch = async (curr1, curr2, timeFormat) => {
     let exchangeRateData = await getExchangeRate(curr1, curr2, timeFormat);
-    console.log(exchangeRateData);
     if(exchangeRateData['Note']) {
       this.setState({
         message: 'Exceeded Server Requests'
@@ -78,11 +58,16 @@ class App extends Component {
     });
   }
 
+  handleUpdateFavorites = (favorites) => {
+    this.setState({ favorites })
+  }
+
   addToFavorites = async (currencies) => {
     try {
-      let fav = await favoritesService.addFavorite(currencies);
-      console.log('DONE', fav);
-      // this.handleFavorites();
+      let favorite = await favoritesService.addFavorite(currencies);
+      let favorites = [...this.state.favorites, favorite]
+      console.log('DONE', favorites);
+      this.handleUpdateFavorites(favorites);
     } catch (err) {
       console.log('Fail');
       throw err;
