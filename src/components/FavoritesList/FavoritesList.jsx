@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import './FavoritesList.css';
-// import userService from '../../utils/userService';
 import favoritesService from '../../utils/favoritesService';
 
 class FavoritesList extends Component {

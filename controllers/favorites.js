@@ -14,10 +14,6 @@ async function create(req, res) {
         let favorite = new Favorite(req.body);
         await favorite.save();
         res.status(200).json(favorite);
-        // const user = await User.findOne({"_id": req.user._id});
-        // user.favorites.push(req.body);
-        // user.save();
-        // res.status(200).json(user);
     } catch (err) {
         console.log('Oops something went wrong!')
         res.json({err});
@@ -34,6 +30,5 @@ async function deleteOne(req, res) {
 
 async function index(req, res) {
     const favorites = await Favorite.find({user: req.user._id});
-    // console.log('FAVORITES', favorites);
     res.status(200).json(favorites);
 }
