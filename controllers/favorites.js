@@ -34,6 +34,6 @@ async function deleteOne(req, res) {
 
 async function index(req, res) {
     const favorites = await Favorite.find({user: req.user._id});
-    console.log('FAVORITES', favorites);
+    // console.log('FAVORITES', favorites);
     res.status(200).json(favorites);
 }

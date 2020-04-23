@@ -19,27 +19,39 @@ class App extends Component {
       graphData: '',
       timeFormat: '',
       message: '',
-      favorites: ''
+      favorites: []
     }
   }
 
-  handleFavorites = () => {
-    let favorites = favoritesService.getFavorites();
-    this.setState({
-      favorites: favorites
-    })
+  // componentDidMount() {
+  //   if(this.state.user) {
+  //     this.handleFavorites();
+  //   }
+  // }
+
+  // handleFavorites = async () => {
+  //   if(this.state.user) {
+  //     let favorites = await favoritesService.getFavorites();
+  //     this.setState({
+  //       favorites: favorites
+  //     })
+  //   } 
+  // }
+
+  handleUpdateFavorites = (favorites) => {
+    this.setState({ favorites })
   }
 
   handleLogout = () => {
     userService.logout();
-    this.setState({user: null});
+    this.setState({
+      user: null, 
+      favorites: []
+    });
   }
 
-  handleSignupOrLogin = async () => {
-    await this.setState({user: userService.getUser()});
-    if(this.state.user) {
-      this.handleFavorites();
-    }
+  handleSignupOrLogin =  () => {
+    this.setState({user: userService.getUser()});
   }
 
   handleExchangeRateSearch = async (curr1, curr2, timeFormat) => {
@@ -70,7 +82,7 @@ class App extends Component {
     try {
       let fav = await favoritesService.addFavorite(currencies);
       console.log('DONE', fav);
-      this.handleFavorites();
+      // this.handleFavorites();
     } catch (err) {
       console.log('Fail');
       throw err;
@@ -82,6 +94,13 @@ class App extends Component {
     this.setState({
       user: userService.getUser()
     })
+  }
+
+  async componentDidMount() {
+    if(userService.getUser()) {
+      const favorites = await favoritesService.getFavorites();
+      this.setState({ favorites })
+    }
   }
 
   render() {
@@ -113,6 +132,7 @@ class App extends Component {
                   handleExchangeRateSearch={this.handleExchangeRateSearch}
                   user={this.state.user}
                   favorites={this.state.favorites}
+                  handleUpdateFavorites={this.handleUpdateFavorites}
                 />
               )}/>
 

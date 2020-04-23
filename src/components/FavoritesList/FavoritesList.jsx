@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import './FavoritesList.css';
-import userService from '../../utils/userService';
+// import userService from '../../utils/userService';
+import favoritesService from '../../utils/favoritesService';
 
 class FavoritesList extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         user: userService.getUser()
-    //     }
-    // }
+
+    async componentDidMount() {
+        const favorites = await favoritesService.getFavorites();
+        this.props.handleUpdateFavorites(favorites)
+    }
 
     handleDelete = async (e) => {
         e.preventDefault();
@@ -20,24 +20,18 @@ class FavoritesList extends Component {
         this.props.handleExchangeRateSearch(JSON.parse(e.target.id).curr1, JSON.parse(e.target.id).curr2, 'FX_DAILY');
     }
 
-    // componentDidMount() {
-    //     this.setState({
-    //         user: userService.getUser()
-    //     })
-    // }
-
     render() {
+        const favRows = this.props.favorites.map((fav, idx) => (
+            <div key={idx}>
+                <button onClick={this.handleDelete} id={idx}>X</button>
+                <Link to='/' onClick={this.handleClick} id={JSON.stringify(fav)}>
+                    {fav.curr1} to {fav.curr2}
+                </Link>
+            </div>
+        ));
         return (
             <div>
-                {this.props.favorites.map((fav, idx) => 
-                    <div key={idx}>
-                        <button onClick={this.handleDelete} id={idx}>X</button>
-                        <Link to='/' onClick={this.handleClick} id={JSON.stringify(fav)}>
-                            {fav.curr1} to {fav.curr2}
-                        </Link>
-                    </div>
-                )}
-
+                {favRows}
             </div>
         )
     }
