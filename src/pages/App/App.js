@@ -104,10 +104,13 @@ class App extends Component {
                   handleNewSearch={this.handleNewSearch}
                   addToFavorites={this.addToFavorites}
                   user={this.state.user}
+                  deleteFavorite={this.deleteFavorite}
+                  favorites={this.state.favorites}
+                  handleUpdateFavorites={this.handleUpdateFavorites}
                 />
               )}/>
 
-              <Route exact path="/favorites" render={() => (
+              {/* <Route exact path="/favorites" render={() => (
                 <FavoritesList 
                   deleteFavorite={this.deleteFavorite}
                   handleExchangeRateSearch={this.handleExchangeRateSearch}
@@ -115,7 +118,7 @@ class App extends Component {
                   favorites={this.state.favorites}
                   handleUpdateFavorites={this.handleUpdateFavorites}
                 />
-              )}/>
+              )}/> */}
 
               <Route exact path="/signup" render={({history}) => (
                 <SignupPage 
