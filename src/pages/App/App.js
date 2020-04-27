@@ -78,7 +78,6 @@ class App extends Component {
   }
 
   toggleFavMenu = () => {
-    // this.props.handleNewSearch();
     let favs = document.querySelector('.favs-container')
     let isHidden = favs.getAttribute('class') === 'favs-container hidden';
     if(isHidden) {
