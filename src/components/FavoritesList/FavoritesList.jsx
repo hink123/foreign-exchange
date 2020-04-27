@@ -17,6 +17,7 @@ class FavoritesList extends Component {
     }
 
     handleClick = (e) => {
+        this.props.toggleFavMenu();
         this.props.handleExchangeRateSearch(JSON.parse(e.target.id).curr1, JSON.parse(e.target.id).curr2, 'FX_DAILY');
     }
 

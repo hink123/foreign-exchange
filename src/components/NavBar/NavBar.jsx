@@ -14,18 +14,6 @@ class NavBar extends Component {
         })
     }
 
-    toggleFavMenu = () => {
-        // this.props.handleNewSearch();
-        let favs = document.querySelector('.favs-container')
-        let isHidden = favs.getAttribute('class') === 'favs-container hidden';
-        if(isHidden) {
-            favs.setAttribute('class', 'favs-container shown');
-        } else {
-            favs.setAttribute('class', 'favs-container hidden')
-        }
-    }
-
-
     render() {
         let nav = this.props.user ?
         <div className='navbar'>
@@ -41,7 +29,7 @@ class NavBar extends Component {
             </div>
             <div id="navbarDrop" className={this.state.dropDown ? "navbar-menu is-active" : "navbar-menu"}>
                 <div className="navbar-item">
-                    <Link to='' onClick={this.toggleFavMenu} className='navbar-text'>Favorites</Link>
+                    <Link to='' onClick={this.props.toggleFavMenu} className='navbar-text'>Favorites</Link>
                 </div>
                 <div className='navbar-item navbar-end'>
                     <Link to='' className="navbar-text" onClick={this.props.handleLogout}>Logout</Link>

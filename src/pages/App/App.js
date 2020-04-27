@@ -77,6 +77,17 @@ class App extends Component {
     await favoritesService.deleteFavorite(idx);
   }
 
+  toggleFavMenu = () => {
+    // this.props.handleNewSearch();
+    let favs = document.querySelector('.favs-container')
+    let isHidden = favs.getAttribute('class') === 'favs-container hidden';
+    if(isHidden) {
+        favs.setAttribute('class', 'favs-container shown');
+    } else {
+        favs.setAttribute('class', 'favs-container hidden')
+    }
+}
+
   async componentDidMount() {
     if(userService.getUser()) {
       const favorites = await favoritesService.getFavorites();
@@ -88,6 +99,7 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar 
+          toggleFavMenu={this.toggleFavMenu}
           user={this.state.user} 
           handleLogout={this.handleLogout}
           handleNewSearch={this.handleNewSearch}
@@ -107,6 +119,7 @@ class App extends Component {
                   deleteFavorite={this.deleteFavorite}
                   favorites={this.state.favorites}
                   handleUpdateFavorites={this.handleUpdateFavorites}
+                  toggleFavMenu={this.toggleFavMenu}
                 />
               )}/>
 

@@ -16,6 +16,7 @@ class HomePage extends Component {
                   user={this.props.user}
                   favorites={this.props.favorites}
                   handleUpdateFavorites={this.props.handleUpdateFavorites}
+                  toggleFavMenu={this.props.toggleFavMenu}
                 />
                 {this.props.graphData ?
                     <ExchangeRateGraph 
