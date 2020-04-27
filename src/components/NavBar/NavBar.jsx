@@ -28,7 +28,7 @@ class NavBar extends Component {
             </div>
             <div id="navbarDrop" className={this.state.dropDown ? "navbar-menu is-active" : "navbar-menu"}>
                 <div className="navbar-item">
-                    <Link to='/favorites' className='navbar-text'>Favorites</Link>
+                    <Link to='/favorites' onClick={this.props.handleNewSearch} className='navbar-text'>Favorites</Link>
                 </div>
                 <div className='navbar-item navbar-end'>
                     <Link to='' className="navbar-text" onClick={this.props.handleLogout}>Logout</Link>

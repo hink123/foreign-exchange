@@ -66,7 +66,6 @@ class App extends Component {
     try {
       let favorite = await favoritesService.addFavorite(currencies);
       let favorites = [...this.state.favorites, favorite]
-      console.log('DONE', favorites);
       this.handleUpdateFavorites(favorites);
     } catch (err) {
       console.log('Fail');
