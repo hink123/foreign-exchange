@@ -7,7 +7,6 @@ import HomePage from '../HomePage/HomePage';
 import userService from '../../utils/userService';
 import favoritesService from '../../utils/favoritesService';
 import {getExchangeRate} from '../../services/fx-api';
-import FavoritesList from '../../components/FavoritesList/FavoritesList';
 import './App.css';
 
 class App extends Component {
@@ -35,6 +34,14 @@ class App extends Component {
     this.setState({user: userService.getUser()});
   }
 
+  handleNewSearch = () => {
+    this.setState({
+      graphData: '',
+      timeFormat: '',
+      message: ''
+    });
+  }
+
   handleExchangeRateSearch = async (curr1, curr2, timeFormat) => {
     let exchangeRateData = await getExchangeRate(curr1, curr2, timeFormat);
     if(exchangeRateData['Note']) {
@@ -48,14 +55,6 @@ class App extends Component {
         message: ''
       });
     }
-  }
-
-  handleNewSearch = () => {
-    this.setState({
-      graphData: '',
-      timeFormat: '',
-      message: ''
-    });
   }
 
   handleUpdateFavorites = (favorites) => {
