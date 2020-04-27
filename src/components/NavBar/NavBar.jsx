@@ -13,6 +13,18 @@ class NavBar extends Component {
             dropDown: !this.state.dropDown
         })
     }
+
+    toggleFavMenu = () => {
+        let favs = document.querySelector('.favs-container')
+        let isHidden = favs.getAttribute('class') === 'favs-container hidden';
+        if(isHidden) {
+            favs.setAttribute('class', 'favs-container shown');
+        } else {
+            favs.setAttribute('class', 'favs-container hidden')
+        }
+    }
+
+
     render() {
         let nav = this.props.user ?
         <div className='navbar'>
