@@ -16,7 +16,6 @@ class ExchangeRateGraph extends Component {
     }
 
     async componentDidMount() {
-        
         await this.setState({
             curr1: this.props.graphData['Meta Data']['2. From Symbol'],
             curr2: this.props.graphData['Meta Data']['3. To Symbol']
@@ -61,8 +60,9 @@ class ExchangeRateGraph extends Component {
         this.componentDidMount();
     }
 
-    handleHeartClick = () => {
-        this.props.addToFavorites(this.state);
+    handleHeartClick = async () => {
+        await this.props.addToFavorites(this.state);
+        this.componentDidMount();
     }
 
     render() {
