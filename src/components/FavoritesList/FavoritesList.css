@@ -3,4 +3,20 @@
     display: flex;
     flex-direction: column;
     width: 30%;
+    margin-left: 0rem;
+    transition: 0.7s;
+    position: fixed;
+    z-index: 1;
+}
+
+.hidden {
+    opacity: 0;
+    left: -100rem;
+    transition: 0.7s;
+}
+
+.shown {
+    opacity: 1;
+    left: 0rem; 
+    transition: 0.7s;
 }
