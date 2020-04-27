@@ -10,51 +10,12 @@ var dataPoints=[]
 
 class ExchangeRateGraph extends Component {
 
-    state = {
-        curr1: '',
-        curr2: ''
-    }
+    // state = {
+    //     curr1: '',
+    //     curr2: ''
+    // }
 
-    async componentDidMount() {
-        await this.setState({
-            curr1: this.props.graphData['Meta Data']['2. From Symbol'],
-            curr2: this.props.graphData['Meta Data']['3. To Symbol']
-        });
-
-        let timeSeriesFX = '';
-        if(this.props.timeFormat==='FX_INTRADAY') {
-            timeSeriesFX = this.props.graphData['Time Series FX (60min)'];
-        } else if(this.props.timeFormat==='FX_DAILY') {
-            timeSeriesFX = this.props.graphData['Time Series FX (Daily)'];
-        } else if(this.props.timeFormat==='FX_WEEKLY') {
-            timeSeriesFX = this.props.graphData['Time Series FX (Weekly)'];
-        } else if(this.props.timeFormat==='FX_MONTHLY') {
-            timeSeriesFX = this.props.graphData['Time Series FX (Monthly)'];
-        }
-
-        var chart = this.chart;
-
-        for(const property in timeSeriesFX) {
-            if(this.props.timeFormat==='FX_INTRADAY') {
-                dataPoints.push({
-                    x: new Date(property.slice(0, 4), property.slice(5, 7) - 1, property.slice(8, 10), property.slice(11, 13)),
-                    y: parseFloat(timeSeriesFX[property]['1. open'])
-                });
-            } else {
-                dataPoints.push({
-                    x: new Date(property.slice(0, 4), property.slice(5, 7) - 1, property.slice(8, 10)),
-                    y: parseFloat(timeSeriesFX[property]['1. open'])
-                });
-            }
-            
-        }
-        dataPoints.splice(50);
-        dataPoints.reverse();
-        chart.render();
-        dataPoints = [];	
-    }
-
-    async componentDidUpdate() {
+    componentDidMount() {
         // await this.setState({
         //     curr1: this.props.graphData['Meta Data']['2. From Symbol'],
         //     curr2: this.props.graphData['Meta Data']['3. To Symbol']
@@ -90,7 +51,11 @@ class ExchangeRateGraph extends Component {
         dataPoints.splice(50);
         dataPoints.reverse();
         chart.render();
-        dataPoints = [];
+        dataPoints = [];	
+    }
+
+    componentDidUpdate() {
+        this.componentDidMount();
     }
 
     handleTimeChange = async (e) => {
@@ -100,7 +65,11 @@ class ExchangeRateGraph extends Component {
     }
 
     handleHeartClick = async () => {
-        await this.props.addToFavorites(this.state);
+        let currencies = {
+            curr1: this.props.graphData['Meta Data']['2. From Symbol'],
+            curr2: this.props.graphData['Meta Data']['3. To Symbol']
+        }
+        await this.props.addToFavorites(currencies);
         this.componentDidMount();
     }
 
