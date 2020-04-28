@@ -88,7 +88,6 @@ class App extends Component {
 
   async componentDidMount() {
     if(userService.getUser()) {
-      console.log('1HERE?');
       const favorites = await favoritesService.getFavorites();
       this.setState({ favorites })
     }

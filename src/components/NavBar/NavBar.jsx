@@ -28,10 +28,10 @@ class NavBar extends Component {
                 </button>
             </div>
             <div id="navbarDrop" className={this.state.dropDown ? "navbar-menu is-active" : "navbar-menu"}>
-                <div className="navbar-item">
+                <div className="navbar-item" onClick={this.toggleDropDown}>
                     <div onClick={this.props.toggleFavMenu} className='navbar-text nav-fav'>Favorites</div>
                 </div>
-                <div className='navbar-item navbar-end'>
+                <div className='navbar-item navbar-end' onClick={this.toggleDropDown}>
                     <Link to='' className="navbar-text" onClick={this.props.handleLogout}>Logout</Link>
                 </div>
                 <div className="navbar-item navbar-name">{this.props.user.name}</div>
@@ -50,10 +50,10 @@ class NavBar extends Component {
                 </button>
             </div>
             <div id='navbarDrop' className={this.state.dropDown ? "navbar-menu is-active" : "navbar-menu"}>
-                <div className='navbar-item navbar-end'>
+                <div className='navbar-item navbar-end' onClick={this.toggleDropDown}>
                     <Link to='/login' className="navbar-text">Login</Link>
                 </div>
-                <div className='navbar-item'>
+                <div className='navbar-item' onClick={this.toggleDropDown}>
                     <Link to='/signup' className="navbar-text">Signup</Link>
                 </div>
             </div>

@@ -10,16 +10,8 @@ var dataPoints=[]
 
 class ExchangeRateGraph extends Component {
 
-    // state = {
-    //     curr1: '',
-    //     curr2: ''
-    // }
 
     componentDidMount() {
-        // await this.setState({
-        //     curr1: this.props.graphData['Meta Data']['2. From Symbol'],
-        //     curr2: this.props.graphData['Meta Data']['3. To Symbol']
-        // });
 
         let timeSeriesFX = '';
         if(this.props.timeFormat==='FX_INTRADAY') {
