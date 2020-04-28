@@ -26,8 +26,20 @@
 .individual-fav {
     font-size: 2rem;
     color: white;
+    margin-top: 3%;
+}
+
+.individual-fav:hover {
+    border-bottom: 2px solid white;
+    color: white;
 }
 
 .individual-fav-container {
-    margin-left: 10%
+    margin-left: 10%;
+    display: flex;
+    align-items: center;
+}
+
+button.remove {
+    width: fit-content;
 }
