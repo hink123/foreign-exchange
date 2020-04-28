@@ -6,8 +6,10 @@ import favoritesService from '../../utils/favoritesService';
 class FavoritesList extends Component {
 
     async componentDidMount() {
-        const favorites = await favoritesService.getFavorites();
-        this.props.handleUpdateFavorites(favorites)
+        if(this.props.user) {
+            const favorites = await favoritesService.getFavorites();
+            this.props.handleUpdateFavorites(favorites)
+        }
     }
 
     handleDelete = async (e) => {

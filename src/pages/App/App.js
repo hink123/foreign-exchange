@@ -88,6 +88,7 @@ class App extends Component {
 
   async componentDidMount() {
     if(userService.getUser()) {
+      console.log('1HERE?');
       const favorites = await favoritesService.getFavorites();
       this.setState({ favorites })
     }
@@ -120,16 +121,6 @@ class App extends Component {
                   toggleFavMenu={this.toggleFavMenu}
                 />
               )}/>
-
-              {/* <Route exact path="/favorites" render={() => (
-                <FavoritesList 
-                  deleteFavorite={this.deleteFavorite}
-                  handleExchangeRateSearch={this.handleExchangeRateSearch}
-                  user={this.state.user}
-                  favorites={this.state.favorites}
-                  handleUpdateFavorites={this.handleUpdateFavorites}
-                />
-              )}/> */}
 
               <Route exact path="/signup" render={({history}) => (
                 <SignupPage 
