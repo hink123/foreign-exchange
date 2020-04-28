@@ -25,9 +25,9 @@ class FavoritesList extends Component {
 
     render() {
         const favRows = this.props.favorites.map((fav, idx) => (
-            <div key={idx}>
+            <div key={idx} className='individual-fav-container'>
                 <button onClick={this.handleDelete} id={fav._id}>X</button>
-                <Link to='/' onClick={this.handleClick} id={JSON.stringify(fav)}>
+                <Link to='/' onClick={this.handleClick} id={JSON.stringify(fav)} className='individual-fav'>
                     {fav.curr1} to {fav.curr2}
                 </Link>
             </div>

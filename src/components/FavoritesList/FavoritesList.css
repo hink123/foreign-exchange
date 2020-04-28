@@ -1,5 +1,5 @@
 .favs-container {
-    background-color: green;
+    background-color: #5DCEB3;
     display: flex;
     flex-direction: column;
     width: 30%;
@@ -7,6 +7,8 @@
     transition: 0.7s;
     position: fixed;
     z-index: 1;
+    border: 3px solid white;
+    border-radius: 5px;
 }
 
 .hidden {
@@ -19,4 +21,13 @@
     opacity: 1;
     left: 0rem; 
     transition: 0.7s;
+}
+
+.individual-fav {
+    font-size: 2rem;
+    color: white;
+}
+
+.individual-fav-container {
+    margin-left: 10%
 }
