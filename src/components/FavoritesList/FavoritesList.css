@@ -9,6 +9,9 @@
     z-index: 1;
     border: 3px solid white;
     border-radius: 5px;
+    padding-bottom: 2rem;
+    padding-top: 1rem;
+    align-items: center;
 }
 
 .hidden {
@@ -24,7 +27,7 @@
 }
 
 .individual-fav {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: white;
     margin-top: 3%;
 }
@@ -35,11 +38,27 @@
 }
 
 .individual-fav-container {
-    margin-left: 10%;
     display: flex;
     align-items: center;
+    margin-bottom: .8rem;
 }
 
 button.remove {
     width: fit-content;
+    margin-right: 1rem;
+    border: 2px solid white;
+    color: white;
+    background-color: #5DCEB3;
+    font-size: .9rem;
+}
+
+div.fav-list-title {
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    border: 3px solid white;
+    border-radius: 5px;
+    padding: 0.5rem;
+    width: fit-content;
+    margin-bottom: 1rem;
 }

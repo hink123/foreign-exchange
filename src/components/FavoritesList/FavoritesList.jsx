@@ -34,7 +34,12 @@ class FavoritesList extends Component {
         ));
         return (
             <div className='favs-container hidden'>
-                {favRows}
+                <div className='fav-list-title'>
+                    Favorites List
+                </div>
+                <div>
+                    {favRows}
+                </div>
             </div>
         )
     }
