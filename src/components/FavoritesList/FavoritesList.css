@@ -8,6 +8,7 @@
     position: fixed;
     z-index: 1;
     border: 3px solid white;
+    border-left: none;
     border-radius: 5px;
     padding-bottom: 2rem;
     padding-top: 1rem;
@@ -52,6 +53,12 @@ button.remove {
     font-size: .9rem;
 }
 
+button.remove:hover {
+    color: #5DCEB3;
+    border: 2px solid #5DCEB3;
+    background-color: white;
+}
+
 div.fav-list-title {
     text-align: center;
     color: white;
@@ -61,4 +68,18 @@ div.fav-list-title {
     padding: 0.5rem;
     width: fit-content;
     margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 925px) {
+    
+    .favs-container {
+        width: 50%;
+    }
+
+}
+
+@media only screen and (max-width: 450px) {
+    .favs-container {
+        width: 100%;
+    }
 }
