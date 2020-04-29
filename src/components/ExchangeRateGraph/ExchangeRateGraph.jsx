@@ -96,6 +96,7 @@ class ExchangeRateGraph extends Component {
                 color: '#5DCEB3'
             }]
         }
+
         return (
             <div className='chart-container'>
                 <div className='special-message'>{this.props.message}</div>
@@ -112,7 +113,9 @@ class ExchangeRateGraph extends Component {
                     <button className='is-primary button time' disabled={(this.props.timeFormat==='FX_MONTHLY')} name='FX_MONTHLY' onClick={this.handleTimeChange}>Monthly</button>
                 </div>
                 <div className='button-container'>
-                    <button style={(this.props.user ? {display: 'inline-block'} : {display: 'none'})} className='button heart new' onClick={this.handleHeartClick}>&hearts;</button>
+                    <button className='button heart new' onClick={this.handleHeartClick} title={(this.props.user) ? '':'Login to Save to Favorites'} disabled={(this.props.user) ? false : true}>
+                        &hearts;
+                    </button>
                     <button onClick={this.props.handleNewSearch} className='is-primary button new'>New Search</button>
                 </div>
             </div>
