@@ -35,7 +35,7 @@ class LoginPage extends Component {
                             <div className='login-title'>
                                 Login
                             </div>
-                            <input type="text" className="input special is-large is-primary" value={this.state.email} name="email" onChange={this.handleChange} placeholder='Email'/>
+                            <input type="text" className="input special is-large is-primary" value={this.state.email} name="email" onChange={this.handleChange} placeholder='Email' autoComplete='off'/>
                         </div>
                     </div>
                     <div className="field">

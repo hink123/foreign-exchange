@@ -29,7 +29,7 @@ class SignupPage extends Component {
     }
 
     isFormInvalid() {
-        return !(this.state.name && this.state.email && this.state.password === this.state.passwordConf)
+        return !(this.state.name && this.state.email && this.state.password && this.state.password === this.state.passwordConf)
     }
 
     render() {
@@ -41,22 +41,22 @@ class SignupPage extends Component {
                             <div className='login-title'>
                                 Signup
                             </div>
-                            <input type="text" className="input special is-large is-primary" value={this.state.name} name="name" onChange={this.handleChange} placeholder='Name'/>
+                            <input type="text" className="input special is-large is-primary" value={this.state.name} name="name" onChange={this.handleChange} placeholder='Name' autoComplete='off'/>
                         </div>
                     </div>
                     <div className="field">
                         <div className="control first-div">
-                            <input type="text" className="input special is-large is-primary" value={this.state.email} name="email" onChange={this.handleChange} placeholder='Email'/>
+                            <input type="text" className="input special is-large is-primary" value={this.state.email} name="email" onChange={this.handleChange} placeholder='Email' autoComplete='off'/>
                         </div>
                     </div>
                     <div className="field">
                         <div className="control first-div">
-                            <input type="text" className="input special is-large is-primary" value={this.state.password} name="password" onChange={this.handleChange} placeholder='Password'/>
+                            <input type="password" className="input special is-large is-primary" value={this.state.password} name="password" onChange={this.handleChange} placeholder='Password'/>
                         </div>
                     </div>
                     <div className="field">
                         <div className="control last-div">
-                            <input type="text" className="input special is-large is-primary" value={this.state.passwordConf} name="passwordConf" onChange={this.handleChange} placeholder='Confirm Password' />
+                            <input type="password" className="input special is-large is-primary" value={this.state.passwordConf} name="passwordConf" onChange={this.handleChange} placeholder='Confirm Password' />
                             <button type="submit" className="button is-primary" disabled={this.isFormInvalid()}>Submit</button>
                         </div>
                     </div>
