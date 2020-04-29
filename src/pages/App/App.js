@@ -51,7 +51,7 @@ class App extends Component {
       });
     } else if(exchangeRateData['Error Message']) {
         this.setState({
-          message: 'This Service is Currently Unavailable'
+          message: 'Search Parameters Invalid'
         })
     } else {
         this.setState({
