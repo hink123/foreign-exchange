@@ -44,16 +44,21 @@ class App extends Component {
 
   handleExchangeRateSearch = async (curr1, curr2, timeFormat) => {
     let exchangeRateData = await getExchangeRate(curr1, curr2, timeFormat);
+    console.log('HERRRR', exchangeRateData);
     if(exchangeRateData['Note']) {
       this.setState({
         message: 'Exceeded Server Requests'
       });
+    } else if(exchangeRateData['Error Message']) {
+        this.setState({
+          message: 'This Service is Currently Unavailable'
+        })
     } else {
-      this.setState({
-        graphData: exchangeRateData,
-        timeFormat: timeFormat,
-        message: ''
-      });
+        this.setState({
+          graphData: exchangeRateData,
+          timeFormat: timeFormat,
+          message: ''
+        });
     }
   }
 

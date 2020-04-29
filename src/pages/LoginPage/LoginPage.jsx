@@ -21,7 +21,6 @@ class LoginPage extends Component {
             this.props.handleLogin();
             this.props.history.push('/');
         } catch (err) {
-            // TODO
             alert('Invalid Credentials')
         }
     }

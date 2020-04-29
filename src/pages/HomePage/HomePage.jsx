@@ -31,6 +31,7 @@ class HomePage extends Component {
                     :
                     <CurrencySelects 
                         handleExchangeRateSearch={this.props.handleExchangeRateSearch}
+                        message={this.props.message}
                     />
                 }
             </div>

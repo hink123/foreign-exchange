@@ -24,12 +24,14 @@ class CurrencySelects extends Component {
     render() {
         return(
             <div>
+                
                 <form onSubmit={this.handleSubmit} className='curr-form'>
                     <div className="field">
                         <div className="control first-div">
                             <div className='form-title'>
                                 Foreign Exchange Markets
                             </div>
+                            <div className='special-message'>{this.props.message}</div>
                             <select name="currency1" className='select special is-large has-background-primary' onChange={this.handleChange}>
                                 {CURRENCIES.map((currency, idx) => 
                                     <option value={currency[0]} key={idx}>{currency[1]}</option>
