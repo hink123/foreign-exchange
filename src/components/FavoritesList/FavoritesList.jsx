@@ -40,6 +40,7 @@ class FavoritesList extends Component {
                 <div>
                     {favRows}
                 </div>
+                <div className='close-favs' onClick={this.props.toggleFavMenu}>Close</div>
             </div>
         )
     }

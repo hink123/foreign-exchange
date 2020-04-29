@@ -10,7 +10,7 @@
     border: 3px solid white;
     border-left: none;
     border-radius: 5px;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
     padding-top: 1rem;
     align-items: center;
 }
@@ -68,6 +68,15 @@ div.fav-list-title {
     padding: 0.5rem;
     width: fit-content;
     margin-bottom: 1rem;
+}
+
+div.close-favs {
+    color: white;
+}
+
+div.close-favs:hover {
+    border-bottom: 1px solid white;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 925px) {
