@@ -40,7 +40,7 @@ class LoginPage extends Component {
                     </div>
                     <div className="field">
                         <div className="control last-div">
-                            <input type="text" className="input special is-large is-primary" value={this.state.password} name="password" onChange={this.handleChange} placeholder="Password" />
+                            <input type="password" className="input special is-large is-primary" value={this.state.password} name="password" onChange={this.handleChange} placeholder="Password" />
                             <button type="submit" className='button is-primary' >Submit</button>
                         </div>
                     </div>
