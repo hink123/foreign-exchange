@@ -69,7 +69,7 @@ class ExchangeRateGraph extends Component {
         let parenthIdx = this.props.graphData['Meta Data']['1. Information'].indexOf('(');
         const options = {
             title: {
-              text: `${this.props.graphData['Meta Data']['2. From Symbol']} to ${this.props.graphData['Meta Data']['3. To Symbol']}`,
+              text: `1 ${this.props.graphData['Meta Data']['2. From Symbol']} to ${this.props.graphData['Meta Data']['3. To Symbol']}`,
               fontColor: '#5DCEB3'
             },
             height: 500,

@@ -33,7 +33,7 @@ class CurrencySelects extends Component {
                             </div>
                             <div className='special-message'>{this.props.message}</div>
                             <select name="currency1" className='select special is-large has-background-primary' onChange={this.handleChange}>
-                                {CURRENCIES.map((currency, idx) => 
+                                {CURRENCIES[0].map((currency, idx) => 
                                     <option value={currency[0]} key={idx}>{currency[1]}</option>
                                 )}
                             </select>
@@ -43,7 +43,7 @@ class CurrencySelects extends Component {
                     <div className="field">
                         <div className="control first-div">
                             <select name="currency2" className='select special is-large has-background-primary' onChange={this.handleChange}>
-                                {CURRENCIES.map((currency, idx) => 
+                                {CURRENCIES[1].map((currency, idx) => 
                                     <option value={currency[0]} key={idx}>{currency[1]}</option>
                                 )}
                             </select>
